@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link data-turbolinks-track="true"
+      href="cms/assets/application.css"
+      media="all"
+      rel="stylesheet">
+
+<link href="css/main.css"
+      rel="stylesheet">
+
+<link href="css/font-awesome.min.css"
+      rel="stylesheet">
+<title>BMW | Luxury</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background:#080808;
+    color:#f5f2eb;
+    font-family:Inter, sans-serif;
+    max-width: 100%;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    background:#080808;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+
+    z-index:9999;
+
+    border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    height:100%;
+}
+
+.logo img{
+    display:block;
+    width:auto;
+    height:52px;
+    object-fit:contain;
+}
+
+/*
+   Si todavía no tienes el logo,
+   puedes usar temporalmente esto.
+*/
+
+.logo-text{
+    font-size:23px;
+    letter-spacing:5px;
+    font-weight:500;
+}
+
+/* ==================================================
+   HAMBURGER
+================================================== */
+
+.menu-toggle{
+    width:48px;
+    height:48px;
+ max-width: 100%;
+    border:1px solid rgba(255,255,255,.25);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:6px;
+
+    cursor:pointer;
+
+    background:transparent;
+
+    transition:.3s;
+
+    position:relative;
+    z-index:1000;
+}
+
+.menu-toggle span{
+    width:21px;
+    height:1px;
+    background:#f5f2eb;
+
+    transition:.3s;
+}
+
+.menu-toggle:hover{
+    background:#f5f2eb;
+}
+
+.menu-toggle:hover span{
+    background:#080808;
+}
+
+/* ==================================================
+   MENU
+================================================== */
+
+.menu{
+
+    position:fixed;
+
+    top:86px;
+    right:0;
+
+    width:420px;
+    height:calc(100vh - 86px);
+
+    background:#0b0b0b;
+
+    padding:55px 50px;
+
+    z-index:10000;
+
+    transform:translateX(100%);
+
+    transition:transform .45s cubic-bezier(.77,0,.18,1);
+
+    border-left:1px solid rgba(255,255,255,.10);
+
+    box-shadow:-20px 0 60px rgba(0,0,0,.5);
+}
+
+.menu.active{
+    transform:translateX(0);
+}
+
+.menu-label{
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:#777;
+
+    text-transform:uppercase;
+
+    margin-bottom:30px;
+}
+
+.menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:22px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.09);
+
+    text-decoration:none;
+
+    color:#f5f2eb;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:29px;
+
+    transition:.3s;
+}
+
+.menu a span{
+
+    font-family:Inter,sans-serif;
+
+    font-size:11px;
+
+    color:#666;
+
+    letter-spacing:2px;
+}
+
+.menu a:hover{
+    padding-left:12px;
+    color:#cfcac1;
+}
+
+
+
+/* --- FIX BARRA DE PAGOS EN MÓVIL --- */
+.payment-bar {
+  flex-wrap: wrap;              /* permite bajar a otra línea */
+  padding: 10px 5px;
+}
+
+.payment-bar img {
+  width: 70px;                 /* más pequeño en móvil */
+  margin: 5px;
+}
+
+/* Ajuste fino solo para pantallas chicas */
+@media (max-width: 480px) {
+  .payment-bar {
+    gap: 10px;
+  }
+
+  .payment-bar img {
+    width: 60px;
+  }
+}
+footer{
+    background:black;
+  
+    text-align: center;
+  }
+/* ==================================================
+   OVERLAY
+================================================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(3px);
+
+    z-index:9998;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+}
+
+.overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    padding-top:86px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#090909;
+}
+
+.hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.95) 0%,
+            rgba(0,0,0,.70) 42%,
+            rgba(0,0,0,.20) 100%
+        ),
+        url("https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=2200&q=90")
+        center center / cover no-repeat;
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    padding:80px 8%;
+}
+
+.hero-kicker{
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#aaa59c;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-weight:400;
+
+    font-size:clamp(55px,8vw,105px);
+
+    line-height:.92;
+
+    max-width:750px;
+
+    margin-bottom:30px;
+}
+
+.hero h1 span{
+
+    display:block;
+
+    color:#d9d5cd;
+}
+
+.hero-description{
+
+    max-width:480px;
+
+    color:#c1bdb5;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:16px 25px;
+
+    background:#f3f0e9;
+
+    color:#090909;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#d6d1c8;
+
+    gap:40px;
+}
+
+/* ==================================================
+   MODELOS
+================================================== */
+
+.models{
+
+    background:#efede7;
+
+    color:#111;
+
+    padding:120px 6%;
+}
+
+.section-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    margin-bottom:55px;
+}
+
+.section-kicker{
+
+    display:block;
+
+    color:#777;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+}
+
+.section-title{
+
+    font-family:'Playfair Display',serif;
+
+    font-weight:400;
+
+    font-size:clamp(45px,6vw,75px);
+}
+
+.section-description{
+
+    max-width:350px;
+
+    color:#666;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.models-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.model{
+
+    position:relative;
+
+    min-height:560px;
+
+    background:#111;
+
+    overflow:hidden;
+
+    color:white;
+}
+
+.model-image{
+
+    position:absolute;
+
+    inset:0;
+
+    background-size:cover;
+
+    background-position:center;
+
+    transition:transform .8s ease;
+}
+
+.model:hover .model-image{
+
+    transform:scale(1.06);
+}
+
+.model-1{
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.95)
+    ),
+    url("ba1.png");
+}
+
+.model-2{
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.95)
+    ),
+    url("ba3.png");
+}
+
+.model-3{
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.95)
+    ),
+    url("ba2.png");
+}
+
+.model-info{
+
+    position:absolute;
+
+    left:30px;
+    right:30px;
+    bottom:30px;
+
+    z-index:2;
+}
+
+.model-info small{
+
+    color:#aaa;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.model-info h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:34px;
+
+    font-weight:400;
+
+    margin:8px 0 22px;
+}
+
+.model-link{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    border-bottom:1px solid #777;
+
+    padding-bottom:6px;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:767px){
+
+    .header{
+       
+        height:76px;
+    }
+
+    .logo img{
+        height:44px;
+    }
+
+    .menu{
+        top:76px;
+        height:calc(100vh - 76px);
+    }
+
+    .hero{
+        padding-top:76px;
+    }
+
+    .models-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-top{
+        display:block;
+    }
+
+    .section-description{
+        margin-top:25px;
+    }
+
+  
+}
+
+@media(max-width:600px){
+
+    .menu{
+        width:100%;
+        padding:40px 30px;
+    }
+
+    .hero-content{
+        padding:70px 7%;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .models{
+        padding:80px 6%;
+    }
+
+    .model{
+        min-height:480px;
+    }
+
+   
+}
+
+
+/* MENU MOVIL — CORRECCIÓN */
+.menu {
+    box-sizing: border-box;
+}
+
+.menu * {
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        top: 76px;
+        right: 0;
+        width: 100%;
+        max-width: 100vw;
+        height: calc(100vh - 76px);
+        padding: 40px 30px;
+        box-sizing: border-box;
+    }
+}
+/* ==================================================
+   FOOTER ORIGINAL — NO ALTERAR DISTRIBUCIÓN
+================================================== */
+
+footer .container {
+    width: 1170px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+footer .col-sm-2 {
+    width: 16.66666667%;
+    float: left;
+}
+
+footer .col-sm-3 {
+    width: 25%;
+    float: left;
+}
+
+footer .col-sm-4 {
+    width: 33.33333333%;
+    float: left;
+}
+
+footer .payment-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+footer .payment-bar img {
+    width: 70px;
+    margin: 5px;
+}
+
+@media (max-width: 767px) {
+    footer .container {
+        width: 100%;
+    }
+
+    footer .row {
+        display: block;
+    }
+
+    footer .col-sm-2,
+    footer .col-sm-3,
+    footer .col-sm-4 {
+        width: 100%;
+        float: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="header">
+    <a href="#" class="logo" >
+        <img src="logo.svg" alt="BMW" style="padding-left: 20%;">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- ==================================================
+     OVERLAY
+================================================== -->
+
+<div class="overlay" id="overlay"></div>
+
+
+<!-- ==================================================
+     MENU
+================================================== -->
+
+<nav class="menu" id="menu">
+
+
+
+    <a href="#inicio">
+        Inicio
+    </a>
+
+    <a href="#modelos">
+        Catalogo
+    </a>
+
+    <a href="#">
+        Terminos y condiciones
+    </a>
+
+    <a href="#">
+        Aviso de privacidad
+    </a>
+
+    <a href="#">
+        Contacto
+    </a>
+
+</nav>
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-image"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-kicker">
+            BMW México
+        </div>
+
+        <h1>
+            El placer
+            <span>de conducir.</span>
+        </h1>
+
+        <p class="hero-description">
+            Diseño, innovación y desempeño reunidos
+            en una experiencia creada para quienes
+            exigen algo extraordinario.
+        </p>
+
+        <a href="#modelos" class="btn">
+            Descubrir modelos
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<style>
+    .slider {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .slider img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .slider button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+background: transparent;
+        color: white;
+        border: none;
+        padding: 12px 18px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+</style>
+
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="contenedor">
+     <div class="slider">
+    <img id="slider-image" src="foto.jpeg" alt="Foto">
+
+    <button class="prev" onclick="cambiarFoto(-1)">❮</button>
+    <button class="next" onclick="cambiarFoto(1)">❯</button>
+</div>
+
+<script>
+    const fotos = [
+        "foto.jpeg",
+        "foto2.jpg",
+        "foto3.png",
+        "foto4.jpg",
+        "foto5.png",
+        "foto6.jpeg",
+        "foto7.png"
+    ];
+
+    let indice = 0;
+
+    function cambiarFoto(direccion) {
+        indice += direccion;
+
+        if (indice >= fotos.length) {
+            indice = 0;
+        }
+
+        if (indice < 0) {
+            indice = fotos.length - 1;
+        }
+
+        document.getElementById("slider-image").src = fotos[indice];
+    }
+
+    // Cambiar automáticamente cada 5 segundos
+    setInterval(function() {
+        cambiarFoto(1);
+    }, 5000);
+</script>
+    </div>
+  </div>
+</div>
+
+
+<!-- ==================================================
+     MODELOS
+================================================== -->
+
+<section class="models" id="modelos">
+
+    <div class="section-top">
+
+        <div>
+
+            <span class="section-kicker">
+                BMW Collection
+            </span>
+
+            <h2 class="section-title">
+                Nuestros modelos
+            </h2>
+
+        </div>
+
+        <p class="section-description">
+            Una selección de vehículos donde el
+            diseño y la ingeniería se encuentran.
+        </p>
+
+    </div>
+
+
+    <div class="models-grid">
+
+
+        <article class="model">
+
+            <div class="model-image model-1"></div>
+
+            <div class="model-info">
+
+            
+                <h3>
+                    Proactive Care: Tu BMW siempre en las mejores manos
+                </h3>
+
+                <a href="" class="model-link">
+                     Más información →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="model">
+
+            <div class="model-image model-2"></div>
+
+            <div class="model-info">
+
+          
+                <h3>
+                  Refacciones originales BMW. 
+                </h3>
+
+                <a href="catalogo.html" class="model-link">
+                    Explorar modelo →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="model">
+
+            <div class="model-image model-3"></div>
+
+            <div class="model-info">
+
+             
+                <h3>
+                    Conoce nuestro aviso de privacidad
+                </h3>
+
+                <a href="aviso.html" class="model-link">
+                    Explorar modelo →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <img src="logo.svg" style="max-width:150px;padding-top: 20%;">
+        </div>
+        <div class="col-sm-3" style="text-align:center;padding-top: 5px;">
+          <b>
+            <br><a href="aviso.html" style="color:white;">Aviso de privacidad</a>
+            <br><a href="terminos.html" style="color:white;">Términos y Condiciones</a>
+            <br><a href="contacto.html" style="color:white;">Contáctanos</a>
+          </b>
+        </div>
+        <div class="col-sm-3" style="text-align:center;margin-top:5px;color:white;">
+          <br>
+          <a href="mailto:ventas@ensambladorahonda.com" style="color:white;">
+            ventas@ensambladorahonda.com
+          </a>
+          <br>
+          <b>Whatsapp:</b> 33 2101 4178<br>
+          <b>Teléfono:</b> 55 9317 8433<br><br>
+          <p>
+         Av. Javier Barros Sierra 495-Piso 14, Oficina 1401,<br> Santa Fe, Álvaro Obregón, 01376 <br>Ciudad de México, CDMX
+          </p>
+        </div>
+        <div class="col-sm-4" style="text-align:center;">
+          <img src="mm.png" style="max-width:250px;padding-top:10%;">
+        </div>
+      </div>
+    </div>
+    <div class="payment-bar">
+      <img src="visa.png">
+      <img src="master.png">
+      <img src="spei.png">
+      <img src="oxxo.png">
+    </div>
+    <nav style="background: linear-gradient(135deg, #020812 0%, #0B2038 48%, #1A4B70 100%);color:white;text-align:center;">
+      <b>Todos los derechos reservados<br>2026</b>
+    </nav>
+  </div>
+</footer>
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+function toggleMenu(){
+
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+
+}
+
+menuToggle.addEventListener("click", toggleMenu);
+
+overlay.addEventListener("click", toggleMenu);
+
+document.querySelectorAll(".menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+
+
+<style>
+  .redes-flotantes {
+position: fixed;
+right: 8px;
+top: 86%;
+z-index: 20;
+max-width: 80px;
+
+}
+.redes-flotantes img {        max-width: 75%;
+
+float: right; clear: right;
+ margin: 5px;
+-moz-transform: scale(.8) ;
+-webkit-transform: scale(.8) ;
+-o-transform: scale(.8) ;
+-ms-transform: scale(.8) ;
+transform: scale(.8) ;
+-webkit-transition: all .2s ease-in-out;
+-moz-transition: all .2s ease-in-out;
+-o-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}</style>
+<div class='redes-flotantes'>
+<div class="btn-whatsapp">
+<a href="https://wa.me/message/S6MNX4S7PMGHP1">
+<img src="w.png" alt="">
+</a>
+</div>
+
+
+
+</body>
+</html>
