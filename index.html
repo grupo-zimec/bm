@@ -31,7 +31,7 @@ body {
 }
 
 body{
-    background:#080808;
+    background:#efede7;
     color:#f5f2eb;
     font-family:Inter, sans-serif;
     max-width: 100%;
@@ -65,14 +65,17 @@ body{
     display:flex;
     align-items:center;
     height:100%;
+
 }
 
 .logo img{
     display:block;
     width:auto;
-    height:52px;
+    height:88px;
     object-fit:contain;
+    padding: 20px;
 }
+
 
 /*
    Si todavía no tienes el logo,
@@ -596,9 +599,7 @@ footer{
         height:76px;
     }
 
-    .logo img{
-        height:44px;
-    }
+  
 
     .menu{
         top:76px;
@@ -770,27 +771,28 @@ footer .payment-bar img {
      MENU
 ================================================== -->
 
+
 <nav class="menu" id="menu">
 
 
 
-    <a href="#inicio">
+    <a href="index.html">
         Inicio
     </a>
 
-    <a href="#modelos">
+    <a href="catalogo.html">
         Catalogo
     </a>
 
-    <a href="#">
+    <a href="terminos.html">
         Terminos y condiciones
     </a>
 
-    <a href="#">
+    <a href="aviso.html">
         Aviso de privacidad
     </a>
 
-    <a href="#">
+    <a href="contacto.html">
         Contacto
     </a>
 
@@ -807,9 +809,6 @@ footer .payment-bar img {
 
     <div class="hero-content">
 
-        <div class="hero-kicker">
-            BMW México
-        </div>
 
         <h1>
             El placer
@@ -822,7 +821,7 @@ footer .payment-bar img {
             exigen algo extraordinario.
         </p>
 
-        <a href="#modelos" class="btn">
+        <a href="catalogo.html" class="btn">
             Descubrir modelos
             <span>→</span>
         </a>
@@ -833,90 +832,6 @@ footer .payment-bar img {
 
 
 
-<style>
-    .slider {
-        position: relative;
-        width: 100%;
-        max-width: 1000px;
-        margin: auto;
-        overflow: hidden;
-    }
-
-    .slider img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .slider button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-background: transparent;
-        color: white;
-        border: none;
-        padding: 12px 18px;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    .prev {
-        left: 10px;
-    }
-
-    .next {
-        right: 10px;
-    }
-</style>
-
-
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="contenedor">
-     <div class="slider">
-    <img id="slider-image" src="foto.jpeg" alt="Foto">
-
-    <button class="prev" onclick="cambiarFoto(-1)">❮</button>
-    <button class="next" onclick="cambiarFoto(1)">❯</button>
-</div>
-
-<script>
-    const fotos = [
-        "foto.jpeg",
-        "foto2.jpg",
-        "foto3.png",
-        "foto4.jpg",
-        "foto5.png",
-        "foto6.jpeg",
-        "foto7.png"
-    ];
-
-    let indice = 0;
-
-    function cambiarFoto(direccion) {
-        indice += direccion;
-
-        if (indice >= fotos.length) {
-            indice = 0;
-        }
-
-        if (indice < 0) {
-            indice = fotos.length - 1;
-        }
-
-        document.getElementById("slider-image").src = fotos[indice];
-    }
-
-    // Cambiar automáticamente cada 5 segundos
-    setInterval(function() {
-        cambiarFoto(1);
-    }, 5000);
-</script>
-    </div>
-  </div>
-</div>
-
 
 <!-- ==================================================
      MODELOS
@@ -924,26 +839,7 @@ background: transparent;
 
 <section class="models" id="modelos">
 
-    <div class="section-top">
 
-        <div>
-
-            <span class="section-kicker">
-                BMW Collection
-            </span>
-
-            <h2 class="section-title">
-                Nuestros modelos
-            </h2>
-
-        </div>
-
-        <p class="section-description">
-            Una selección de vehículos donde el
-            diseño y la ingeniería se encuentran.
-        </p>
-
-    </div>
 
 
     <div class="models-grid">
@@ -1015,19 +911,76 @@ background: transparent;
 
 
 
+<div class="container">
 
+    <img src="banner.jpeg" alt="The International GS Trophy 2026">
 
+    <div class="gs-content" style="color: black;">
+        <h1>The International GS Trophy 2026</h1>
+        <h2>Welcome to Romania</h2>
 
+        <p>
+            <span>GS Trophy</span> nos llevará de vuelta a Europa, del 13 al 18 de septiembre de 2026.
+A un lugar donde convergen una belleza natural espectacular, terrenos vírgenes
+y una cultura profundamente arraigada: Rumanía. Su paisaje, de una diversidad impresionante,
+es el escenario ideal para auténticas aventuras todoterreno: a través de montañas,
+bosques, ríos y pueblos donde el tiempo parece haberse detenido. A los equipos les espera
+un entorno que exige gran destreza y precisión en la conducción. Rumanía ofrece
+precisamente la experiencia que define el espíritu GS: explorar nuevos lugares,
+superar etapas desafiantes y disfrutar de momentos compartidos junto a la hoguera,
+creando recuerdos que perdurarán para siempre. ¡Estamos deseando que llegue el momento!
+        </p>
+    </div>
 
+</div>
 
+<style>
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
+.container > img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
 
+.gs-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    box-sizing: border-box;
+}
 
+.gs-content h1 {
+    margin: 0 0 5px;
+}
 
+.gs-content h2 {
+    margin: 0 0 20px;
+}
 
+.gs-content p {
+    margin: 0;
+    line-height: 1.6;
+}
 
+@media (max-width: 600px) {
+    .container > img {
+        width: 100%;
+        height: auto;
+    }
 
-
+    .gs-content {
+        padding: 20px 15px;
+    }
+}
+</style>
 
 <footer>
   <div>
@@ -1045,11 +998,11 @@ background: transparent;
         </div>
         <div class="col-sm-3" style="text-align:center;margin-top:5px;color:white;">
           <br>
-          <a href="mailto:ventas@ensambladorahonda.com" style="color:white;">
-            ventas@ensambladorahonda.com
+ <a href="mailto:ventas@bmw.com.mx.werke.cc" style="color:white;">
+            ventas@bmw.com.mx.werke.cc
           </a>
           <br>
-          <b>Whatsapp:</b> 33 2101 4178<br>
+          <b>Whatsapp:</b> 56 4813 6159<br>
           <b>Teléfono:</b> 55 9317 8433<br><br>
           <p>
          Av. Javier Barros Sierra 495-Piso 14, Oficina 1401,<br> Santa Fe, Álvaro Obregón, 01376 <br>Ciudad de México, CDMX
@@ -1129,7 +1082,7 @@ transition: all .2s ease-in-out;
 }</style>
 <div class='redes-flotantes'>
 <div class="btn-whatsapp">
-<a href="https://wa.me/message/S6MNX4S7PMGHP1">
+<a href="https://wa.me/message/E3RAKZQ3EZKPK1">
 <img src="w.png" alt="">
 </a>
 </div>

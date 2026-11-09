@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link data-turbolinks-track="true"
+      href="cms/assets/application.css"
+      media="all"
+      rel="stylesheet">
+
+<link href="css/main.css"
+      rel="stylesheet">
+
+<link href="css/font-awesome.min.css"
+      rel="stylesheet">
+<title>BMW | Luxury</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background:#efede7;
+    color:#f5f2eb;
+    font-family:Inter, sans-serif;
+    max-width: 100%;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    background:#080808;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+
+    z-index:9999;
+
+    border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    height:100%;
+
+}
+
+.logo img{
+    display:block;
+    width:auto;
+    height:88px;
+    object-fit:contain;
+    padding: 20px;
+}
+
+
+/*
+   Si todavía no tienes el logo,
+   puedes usar temporalmente esto.
+*/
+
+.logo-text{
+    font-size:23px;
+    letter-spacing:5px;
+    font-weight:500;
+}
+
+/* ==================================================
+   HAMBURGER
+================================================== */
+
+.menu-toggle{
+    width:48px;
+    height:48px;
+ max-width: 100%;
+    border:1px solid rgba(255,255,255,.25);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:6px;
+
+    cursor:pointer;
+
+    background:transparent;
+
+    transition:.3s;
+
+    position:relative;
+    z-index:1000;
+}
+
+.menu-toggle span{
+    width:21px;
+    height:1px;
+    background:#f5f2eb;
+
+    transition:.3s;
+}
+
+.menu-toggle:hover{
+    background:#f5f2eb;
+}
+
+.menu-toggle:hover span{
+    background:#080808;
+}
+
+/* ==================================================
+   MENU
+================================================== */
+
+.menu{
+
+    position:fixed;
+
+    top:86px;
+    right:0;
+
+    width:420px;
+    height:calc(100vh - 86px);
+
+    background:#0b0b0b;
+
+    padding:55px 50px;
+
+    z-index:10000;
+
+    transform:translateX(100%);
+
+    transition:transform .45s cubic-bezier(.77,0,.18,1);
+
+    border-left:1px solid rgba(255,255,255,.10);
+
+    box-shadow:-20px 0 60px rgba(0,0,0,.5);
+}
+
+.menu.active{
+    transform:translateX(0);
+}
+
+.menu-label{
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:#777;
+
+    text-transform:uppercase;
+
+    margin-bottom:30px;
+}
+
+.menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:22px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.09);
+
+    text-decoration:none;
+
+    color:#f5f2eb;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:29px;
+
+    transition:.3s;
+}
+
+.menu a span{
+
+    font-family:Inter,sans-serif;
+
+    font-size:11px;
+
+    color:#666;
+
+    letter-spacing:2px;
+}
+
+.menu a:hover{
+    padding-left:12px;
+    color:#cfcac1;
+}
+
+
+
+/* --- FIX BARRA DE PAGOS EN MÓVIL --- */
+.payment-bar {
+  flex-wrap: wrap;              /* permite bajar a otra línea */
+  padding: 10px 5px;
+}
+
+.payment-bar img {
+  width: 70px;                 /* más pequeño en móvil */
+  margin: 5px;
+}
+
+/* Ajuste fino solo para pantallas chicas */
+@media (max-width: 480px) {
+  .payment-bar {
+    gap: 10px;
+  }
+
+  .payment-bar img {
+    width: 60px;
+  }
+}
+footer{
+    background:black;
+  
+    text-align: center;
+  }
+/* ==================================================
+   OVERLAY
+================================================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(3px);
+
+    z-index:9998;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+}
+
+.overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    padding-top:86px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#090909;
+}
+
+.hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.95) 0%,
+            rgba(0,0,0,.70) 42%,
+            rgba(0,0,0,.20) 100%
+        ),
+        url("https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=2200&q=90")
+        center center / cover no-repeat;
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    padding:80px 8%;
+}
+
+.hero-kicker{
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#aaa59c;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-weight:400;
+
+    font-size:clamp(55px,8vw,105px);
+
+    line-height:.92;
+
+    max-width:750px;
+
+    margin-bottom:30px;
+}
+
+.hero h1 span{
+
+    display:block;
+
+    color:#d9d5cd;
+}
+
+.hero-description{
+
+    max-width:480px;
+
+    color:#c1bdb5;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:16px 25px;
+
+    background:#f3f0e9;
+
+    color:#090909;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#d6d1c8;
+
+    gap:40px;
+}
+
+/* ==================================================
+   MODELOS
+================================================== */
+
+.models{
+
+    background:#efede7;
+
+    color:#111;
+
+    padding:120px 6%;
+}
+
+.section-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    margin-bottom:55px;
+}
+
+.section-kicker{
+
+    display:block;
+
+    color:#777;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+}
+
+.section-title{
+
+    font-family:'Playfair Display',serif;
+
+    font-weight:400;
+
+    font-size:clamp(45px,6vw,75px);
+}
+
+.section-description{
+
+    max-width:350px;
+
+    color:#666;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.models-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.model{
+
+    position:relative;
+
+    min-height:560px;
+
+    background:#111;
+
+    overflow:hidden;
+
+    color:white;
+}
+
+.model-image{
+
+    position:absolute;
+
+    inset:0;
+
+    background-size:cover;
+
+    background-position:center;
+
+    transition:transform .8s ease;
+}
+
+.model:hover .model-image{
+
+    transform:scale(1.06);
+}
+
+.model-1{
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.95)
+    ),
+    url("ba1.png");
+}
+
+.model-2{
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.95)
+    ),
+    url("ba3.png");
+}
+
+.model-3{
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.95)
+    ),
+    url("ba2.png");
+}
+
+.model-info{
+
+    position:absolute;
+
+    left:30px;
+    right:30px;
+    bottom:30px;
+
+    z-index:2;
+}
+
+.model-info small{
+
+    color:#aaa;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.model-info h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:34px;
+
+    font-weight:400;
+
+    margin:8px 0 22px;
+}
+
+.model-link{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    border-bottom:1px solid #777;
+
+    padding-bottom:6px;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:767px){
+
+    .header{
+       
+        height:76px;
+    }
+
+  
+    .logo img{
+        height:88px;
+    }
+
+    .menu{
+        top:76px;
+        height:calc(100vh - 76px);
+    }
+
+    .hero{
+        padding-top:76px;
+    }
+
+    .models-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-top{
+        display:block;
+    }
+
+    .section-description{
+        margin-top:25px;
+    }
+
+  
+}
+
+@media(max-width:600px){
+
+    .menu{
+        width:100%;
+        padding:40px 30px;
+    }
+
+    .hero-content{
+        padding:70px 7%;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .models{
+        padding:80px 6%;
+    }
+
+    .model{
+        min-height:480px;
+    }
+
+   
+}
+
+
+/* MENU MOVIL — CORRECCIÓN */
+.menu {
+    box-sizing: border-box;
+}
+
+.menu * {
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        top: 76px;
+        right: 0;
+        width: 100%;
+        max-width: 100vw;
+        height: calc(100vh - 76px);
+        padding: 40px 30px;
+        box-sizing: border-box;
+    }
+}
+/* ==================================================
+   FOOTER ORIGINAL — NO ALTERAR DISTRIBUCIÓN
+================================================== */
+
+footer .container {
+    width: 1170px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+footer .col-sm-2 {
+    width: 16.66666667%;
+    float: left;
+}
+
+footer .col-sm-3 {
+    width: 25%;
+    float: left;
+}
+
+footer .col-sm-4 {
+    width: 33.33333333%;
+    float: left;
+}
+
+footer .payment-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+footer .payment-bar img {
+    width: 70px;
+    margin: 5px;
+}
+
+@media (max-width: 767px) {
+    footer .container {
+        width: 100%;
+    }
+
+    footer .row {
+        display: block;
+    }
+
+    footer .col-sm-2,
+    footer .col-sm-3,
+    footer .col-sm-4 {
+        width: 100%;
+        float: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="header">
+    <a href="#" class="logo" >
+        <img src="logo.svg" alt="BMW" style="padding-left: 20%;">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- ==================================================
+     OVERLAY
+================================================== -->
+
+<div class="overlay" id="overlay"></div>
+
+
+<!-- ==================================================
+     MENU
+================================================== -->
+
+<nav class="menu" id="menu">
+
+
+
+    <a href="index.html">
+        Inicio
+    </a>
+
+    <a href="catalogo.html">
+        Catalogo
+    </a>
+
+    <a href="terminos.html">
+        Terminos y condiciones
+    </a>
+
+    <a href="aviso.html">
+        Aviso de privacidad
+    </a>
+
+    <a href="contacto.html">
+        Contacto
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     BMW — AVISO DE PRIVACIDAD
+     Todo está encapsulado en .bmw-privacy
+========================================================= -->
+
+<section class="bmw-privacy">
+
+    <!-- HERO -->
+    <div class="bmw-privacy__hero">
+        <div class="bmw-privacy__hero-inner">
+
+
+            <h1>
+                Aviso de<br>
+                <span>Privacidad</span>
+            </h1>
+
+            <p class="bmw-privacy__hero-subtitle">
+                TU INFORMACIÓN, NUESTRA PRIORIDAD
+            </p>
+
+            <div class="bmw-privacy__hero-meta">
+                Última actualización · 25 de abril de 2025
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ÍNDICE -->
+    <nav class="bmw-privacy__index">
+
+        <a href="#privacidad-i" class="is-active">Índice</a>
+        <a href="#privacidad-i">I. Responsable</a>
+        <a href="#privacidad-ii">II. Finalidades</a>
+        <a href="#privacidad-iii">III. Consentimiento</a>
+        <a href="#privacidad-iv">IV. Transferencias</a>
+        <a href="#privacidad-v">V. Derechos ARCO</a>
+        <a href="#privacidad-vi">VI. Política en línea</a>
+        <a href="#privacidad-vii">VII. Contacto</a>
+        <a href="#privacidad-viii">VIII. Cambios</a>
+
+    </nav>
+
+
+    <!-- CONTENIDO -->
+    <div class="bmw-privacy__content">
+
+
+        <!-- I -->
+        <article id="privacidad-i" class="bmw-privacy__section">
+
+            <div class="bmw-privacy__number">I.</div>
+
+            <div class="bmw-privacy__body">
+
+                <div class="bmw-privacy__label">
+                    RESPONSABLE
+                </div>
+
+                <h2>
+                    Responsable de la protección
+                    de sus datos personales
+                </h2>
+
+                <p>
+                    BMW de México, S. A. de C. V. (BMW México), con domicilio en
+                    Av. Javier Barros Sierra 495, piso 14, oficina 1401, Park Plaza III,
+                    Colonia Santa Fe, C.P. 01376, Alcaldía Álvaro Obregón, Ciudad de México,
+                    es responsable del tratamiento de sus datos personales en términos de la
+                    Ley Federal de Protección de Datos Personales en Posesión de los Particulares
+                    (LFPDPPP).
+                </p>
+
+            </div>
+        </article>
+
+
+        <!-- II -->
+        <article id="privacidad-ii" class="bmw-privacy__section bmw-privacy__section--wide">
+
+            <div class="bmw-privacy__number">II.</div>
+
+            <div class="bmw-privacy__body">
+
+                <div class="bmw-privacy__label">
+                    FINALIDADES
+                </div>
+
+                <h2>
+                    Finalidad del tratamiento
+                    y datos personales recolectados
+                </h2>
+
+
+                <!-- PROVEEDORES -->
+                <div class="bmw-privacy__subsection">
+
+                    <h3>
+                        <span>a)</span>
+                        Proveedores
+                    </h3>
+
+                    <div class="bmw-privacy__item">
+
+                        <h4>Proveedores potenciales</h4>
+
+                        <p>
+                            Los datos personales generales, financieros y patrimoniales
+                            recolectados de forma directa o indirecta (por referencias de
+                            terceros o de nuestros empleados, y a través del proceso de
+                            Compliance Due Diligence), serán utilizados para evaluar si
+                            cumple con los requisitos para entablar una relación comercial
+                            con BMW México.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bmw-privacy__item">
+
+                        <h4>Proveedores contratados</h4>
+
+                        <p>
+                            Los datos personales generales, financieros y patrimoniales
+                            recolectados de forma directa o indirecta (a través de otras
+                            empresas pertenecientes a BMW Group, por referencias de uno de
+                            nuestros empleados y dentro del proceso de Compliance Due Diligence)
+                            de los proveedores contratados, serán utilizados para los siguientes
+                            fines esenciales: identificación, integrar su expediente, darlo de
+                            alta en nuestros sistemas y bases de datos, realizar el pago de los
+                            bienes o servicios contratados, solicitud de cotizaciones, invitarlo
+                            a participar en procesos de licitación, generar órdenes de compra,
+                            auditorías, contacto y actualización de su información personal,
+                            brindarle acceso a nuestro portal de recepción de facturas para
+                            proveedores.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bmw-privacy__item">
+
+                        <h4>Compliance Due Diligence</h4>
+
+                        <p>
+                            De conformidad con las políticas de BMW Group, realizaremos un
+                            proceso de Compliance Due Diligence para proveedores potenciales
+                            y proveedores contratados (en este caso de forma periódica),
+                            dentro del cual solicitaremos que nos proporcione información
+                            relativa a sus actividades empresariales o profesionales, datos
+                            patrimoniales (bienes inmuebles), financieros (Clave Bancaria
+                            Estandarizada o CLABE) y sensibles (investigaciones o incidentes
+                            relacionados con sobornos, corrupción, fraude, lavado de dinero y
+                            declaraciones falsas).
+                        </p>
+
+                        <p>
+                            Asimismo, como parte de este proceso BMW México podrá realizar
+                            búsquedas en bases de compliance de BMW Group, listas de World
+                            Compliance, listas del Servicio de Administración Tributaria (SAT)
+                            de contribuyentes con operaciones inexistentes o presuntamente
+                            inexistentes, así como búsquedas por Internet para verificar la
+                            veracidad de los datos personales que nos proporcione, conocer sus
+                            antecedentes profesionales y laborales, si ha sido parte en
+                            procedimientos legales, si tiene investigaciones pendientes o si
+                            ha estado relacionado con posibles sobornos, fraudes, conductas
+                            anticompetitivas, evasión fiscal, lavado de dinero y violaciones
+                            a derechos humanos.
+                        </p>
+
+                        <p>
+                            Asimismo, a través de la Declaración de Conflictos de Interés,
+                            solicitaremos que nos indique si usted o alguno de sus empleados
+                            mantienen o han mantenido una relación personal o familiar con
+                            alguno de los empleados de BMW, o si han ofrecido o aceptado
+                            regalos por parte de directivos o colaboradores de BMW, o si
+                            tuvieron una relación laboral o comercial previa con BMW.
+                        </p>
+
+                        <p>
+                            La información recolectada en el proceso de Compliance Due Diligence
+                            es necesaria y será analizada para determinar si existen riesgos para
+                            establecer o mantener una relación jurídica entre usted y BMW México,
+                            así como para mantener un alto estándar de integridad, transparencia
+                            y cumplimiento normativo en las relaciones comerciales de BMW México.
+                        </p>
+
+                        <div class="bmw-privacy__notice">
+                            <strong>Importante</strong>
+                            Para recolectar y tratar sus datos sensibles en los términos señalados
+                            solicitaremos su consentimiento expreso al momento de recabar esta información.
+                        </div>
+
+                    </div>
+
+
+                    <div class="bmw-privacy__item">
+
+                        <h4>Personal clave de proveedores</h4>
+
+                        <p>
+                            Como parte de nuestro proceso de Compliance Due Diligence para
+                            Proveedores y en cumplimiento de las políticas de BMW Group,
+                            usaremos el nombre completo del personal clave de nuestros
+                            proveedores para realizar búsquedas en bases de compliance
+                            de BMW Group y en Internet, con el fin de conocer si tiene
+                            investigaciones pendientes o si ha estado relacionado con
+                            posibles sobornos, fraudes, conductas anticompetitivas, evasión
+                            fiscal, lavado de dinero y violaciones a derechos humanos.
+                        </p>
+
+                        <p>
+                            Asimismo, a través de la Declaración de Conflictos de Interés,
+                            podríamos conocer si mantiene o ha mantenido una relación de
+                            amistad o familiar con alguno de los empleados de BMW, o si
+                            ha ofrecido o aceptado regalos por parte de directivos o
+                            colaboradores de BMW, o si tuvo una relación laboral o
+                            comercial previa con BMW.
+                        </p>
+
+                        <p>
+                            La información recolectada en este proceso es necesaria y será
+                            analizada para determinar si existen riesgos para establecer
+                            o mantener una relación jurídica entre el Proveedor y BMW México,
+                            así como para mantener un alto estándar de integridad,
+                            transparencia y cumplimiento normativo.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bmw-privacy__notice bmw-privacy__notice--quiet">
+                        Sus datos personales no serán utilizados con fines de mercadeo,
+                        publicidad y/o prospección comercial.
+                    </div>
+
+                </div>
+
+
+                <!-- VISITANTES -->
+                <div class="bmw-privacy__subsection">
+
+                    <h3>
+                        <span>b)</span>
+                        Visitantes
+                    </h3>
+
+                    <p>
+                        Los datos personales generales (nombre, empresa/entidad en la que
+                        trabaja, y firma) obtenidos personalmente en nuestros registros o
+                        bitácoras de visitas, y en su caso, por la retención de su
+                        identificación personal, o bien, recolectados de forma directa
+                        a través de herramientas tecnológicas, serán utilizados para
+                        efecto de hacer su pre-registro o registro, permitirle el acceso
+                        y salida de nuestras instalaciones, conocer el motivo de su visita,
+                        salvaguardar la seguridad del personal que labora en esta empresa,
+                        visitantes, equipos y documentación confidencial de BMW México,
+                        así como para generar reportes de visitas que nos permitan
+                        controlar y monitorear la seguridad de nuestras instalaciones.
+                    </p>
+
+                    <div class="bmw-privacy__notice bmw-privacy__notice--quiet">
+                        Los datos personales recolectados para estas finalidades en ningún
+                        caso serán utilizados para fines de publicidad, mercadotecnia y/o
+                        prospección comercial.
+                    </div>
+
+                </div>
+
+
+                <!-- IMÁGENES -->
+                <div class="bmw-privacy__subsection">
+
+                    <h3>
+                        <span>c)</span>
+                        Uso de imágenes
+                    </h3>
+
+                    <div class="bmw-privacy__item">
+
+                        <h4>Fines informativos</h4>
+
+                        <p>
+                            BMW México podrá utilizar, imprimir, reproducir y publicar la(s)
+                            imagen(es) (fotografías y/o vídeos) recolectados de forma personal,
+                            directa e indirecta de aquellas personas que acudan o participen
+                            en los eventos, actividades, cursos, campañas y convocatorias
+                            organizados o en los que participe BMW México, o de las empresas
+                            de BMW Group, así como aquellas obtenidas en entrevistas o
+                            declaraciones realizadas de forma presencial.
+                        </p>
+
+                        <p>
+                            Estas imágenes podrán difundirse en medios impresos, electrónicos,
+                            sitios web, redes sociales, blogs, newsletters, memorias fotográficas
+                            y publicaciones, en todas sus manifestaciones, sus interpretaciones
+                            o ejecuciones, ediciones, emisiones, fonogramas o videogramas,
+                            con fines exclusivamente informativos y periodísticos, en términos
+                            del artículo 87 de la Ley Federal del Derecho de Autor.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bmw-privacy__item">
+
+                        <h4>Cámaras de videovigilancia</h4>
+
+                        <p>
+                            Las imágenes captadas por las cámaras de vigilancia son gestionadas
+                            en un Circuito Cerrado de Televisión, se almacenan en un dispositivo
+                            de almacenamiento DVR (Digital Video Recorder) que se sobreescribe
+                            periódicamente, y serán utilizadas para salvaguardar la seguridad
+                            de nuestros colaboradores, personal externo y visitantes, así como
+                            la de nuestros equipos, sistemas, instalaciones e información
+                            confidencial, y generar reportes internos sobre incidencias.
+                        </p>
+
+                        <p>
+                            Tratándose de proveedores que deban prestar sus servicios directamente
+                            en nuestras instalaciones, emitiremos una credencial de acceso,
+                            para lo cual será necesario tomar una fotografía de la persona que
+                            realizará los servicios, la cual será utilizada para poder verificar
+                            su identidad.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VENTAS ESPECIALES -->
+                <div class="bmw-privacy__subsection">
+
+                    <h3>
+                        <span>d)</span>
+                        Ventas especiales
+                    </h3>
+
+                    <div class="bmw-privacy__item">
+
+                        <h4>Programas de venta a empleados</h4>
+
+                        <p>
+                            Los datos personales generales recolectados de forma directa para
+                            los Programas de Venta a Empleados de BMW y FS, y Venta de vehículos
+                            seminuevos a Empleados, serán utilizados para evaluar su solicitud,
+                            validar con Recursos Humanos de BMW o BMW Financial Services de México,
+                            S.A. de C.V. (FS) que se cumplan los requisitos del programa correspondiente,
+                            verificar la existencia en inventario del modelo de su interés y asignarle
+                            un número de chasis, autorizar su solicitud y el descuento correspondiente,
+                            y generar una base de datos electrónica que nos permita mantener un control
+                            sobre las unidades vendidas a través de estos programas.
+                        </p>
+
+                    </div>
+
+                    <div class="bmw-privacy__item">
+
+                        <h4>Programa de Venta a Dueños de Distribuidores BMW</h4>
+
+                        <p>
+                            Los datos personales generales recolectados de forma directa de los dueños
+                            de distribuidores, serán utilizados para evaluar su solicitud y en su caso
+                            validar si el solicitante cumple con los requisitos del programa; verificar
+                            la existencia en inventario del modelo de su interés y asignarle un número
+                            de chasis; autorizar su solicitud y el descuento que corresponda a la unidad;
+                            y generar una base de datos electrónica que nos permita mantener un control
+                            sobre las unidades nuevas vendidas a dueños de distribuidores de BMW.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESTO DE II -->
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>e)</span> Clientes de vehículos seminuevos certificados</h3>
+
+                    <p>
+                        Los datos personales generales de los clientes de vehículos seminuevos
+                        certificados, los cuales son recolectados a través de nuestra Red de
+                        Distribuidores Autorizados (obtención indirecta), serán utilizados para
+                        registrarlo en nuestros sistemas y bases de datos, envío de comunicaciones
+                        y felicitaciones, generar estadísticas disociadas sobre este mercado,
+                        y auditorías.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>f)</span> Auto pool</h3>
+
+                    <p>
+                        Los datos personales generales recolectados dentro del formato de Auto Pool
+                        de BMW México, serán utilizados para las siguientes finalidades: evaluar y
+                        autorizar su solicitud de préstamo de unidad; verificar que el solicitante
+                        cuenta con licencia de manejo vigente; celebrar el contrato de comodato por
+                        la unidad; mantener un control de estas unidades a través de sistemas o bases
+                        de datos; generar un expediente físico y/o electrónico; restricción al préstamo
+                        de unidades en caso de usos indebidos; acceder a la ubicación del vehículo
+                        para aclarar incidentes; y contactarlo a fin de deslindar responsabilidades
+                        en caso de infracción o de que la unidad haya sufrido daños por un siniestro.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>g)</span> Vehículos de Flotilla</h3>
+
+                    <p>
+                        Los datos personales generales del personal de la empresa que por su perfil
+                        de puesto cuente con la prestación del uso de un vehículo de flotilla serán
+                        utilizados para mantener un registro de control en nuestros sistemas y bases
+                        de datos de la asignación de los vehículos; brindar asistencia y deslindar
+                        responsabilidades en caso de siniestro; proteger los activos de BMW México;
+                        acceder a la ubicación del vehículo para aclarar incidentes, así como tomar
+                        medidas en caso de detectar un mal uso de la unidad.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>h)</span> Prensa</h3>
+
+                    <p>
+                        Los datos personales generales y sensibles recolectados de forma personal
+                        o directa de los periodistas invitados a eventos de BMW México o BMW Group
+                        serán utilizados para identificación; registrar su información en bases de
+                        datos y archivarla en un expediente electrónico; generar un directorio de
+                        prensa; verificar documentación para viajar; organizar la logística del evento
+                        y del viaje; informar sobre cualquier situación de emergencia a sus contactos
+                        designados; generar un perfil de la trayectoria del periodista; envío de
+                        encuestas; facilitar vehículos a la prensa para reseñas editoriales y eventos
+                        especiales; y contacto.
+                    </p>
+
+                    <div class="bmw-privacy__notice">
+                        La información relativa a sus alergias se encuentra clasificada como sensible.
+                        Para su recolección será necesario contar con su consentimiento expreso.
+                    </div>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>i)</span> Asistentes a Eventos y Viajes</h3>
+
+                    <p>
+                        Los datos personales generales y sensibles recolectados de forma directa o
+                        indirecta de los asistentes a eventos organizados por BMW México o BMW Group,
+                        serán utilizados para identificación; registrar a los asistentes y generar
+                        la lista para el acceso al evento; organización y logística, incluyendo
+                        transportación y hospedajes; deslindar responsabilidades por la participación
+                        de los asistentes en cualquiera de las actividades programadas y contacto.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>j)</span> Usuarios de Plataformas de BMW Group</h3>
+
+                    <p>
+                        Los datos personales generales recolectados de forma directa de los usuarios
+                        de la plataforma S-Gate y del Retail B2B Portal, serán utilizados para
+                        identificación; verificación de los datos de registro; creación y administración
+                        de usuarios en las plataformas de BMW Group; generar el perfil de acceso;
+                        permitirle el uso de las plataformas y sus aplicaciones; mantener la adecuada
+                        operación de los portales y solución de problemas.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>k)</span> Comunicaciones</h3>
+
+                    <p>
+                        Los datos personales generales recolectados de forma personal, directa e
+                        indirecta serán utilizados por BMW México para documentar y comunicar
+                        internamente información sobre las actividades, cursos, campañas, convocatorias,
+                        eventos, entrevistas y logros empresariales de BMW México o de las empresas
+                        pertenecientes a BMW Group, así como los logros y trayectoria de los colaboradores,
+                        Distribuidores e Importadores.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>l)</span> Redes Sociales</h3>
+
+                    <p>
+                        La información que nuestros visitantes publican de forma voluntaria y/o
+                        espontánea en nuestro perfil o que envían vía “Inbox” o “DM” dentro de las
+                        Redes Sociales Corporativas de BMW México, se encuentra sujeta a los términos
+                        y condiciones determinados por el proveedor de servicios de la red social
+                        de que se trate.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>m)</span> Selección de Distribuidores e Importadores</h3>
+
+                    <p>
+                        Los datos personales generales, financieros, patrimoniales y sensibles
+                        recolectados de forma personal y directa de los accionistas o personal
+                        directivo de posibles Distribuidores de BMW México, o Importadores de BMW AG,
+                        serán utilizados para realizar investigaciones de Due Diligence que permitan
+                        conocer y evaluar el nivel de riesgo de entablar una relación comercial.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>n)</span> Distribuidores Autorizados</h3>
+
+                    <p>
+                        Los datos personales generales que nos comparten nuestros Distribuidores
+                        Autorizados sobre su personal serán utilizados para generar comunicaciones,
+                        newsletters o boletines con el nombre, puesto y fotografía de los ejecutivos
+                        de ventas destacados para su difusión dentro de nuestra Red de Distribuidores
+                        y las demás empresas pertenecientes a BMW Group.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>o)</span> Devoluciones de anticipos a distribuidores</h3>
+
+                    <p>
+                        En casos excepcionales de terminaciones de contratos de distribución,
+                        BMW México podrá realizar devoluciones de aquellos anticipos que no hayan
+                        sido reembolsados a los clientes por el distribuidor correspondiente.
+                        En esos casos BMW México podrá recolectar datos personales generales y
+                        financieros de los clientes afectados para verificar la identidad del cliente,
+                        realizar la transferencia bancaria, integrar un expediente y realizar auditorías.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>p)</span> Finalidades no esenciales / Medios para limitar el uso y divulgación</h3>
+
+                    <p>
+                        Los datos personales de contacto (correo electrónico) de los clientes de
+                        Ventas especiales y compradores de vehículos seminuevos certificados serán
+                        utilizados para el envío de información sobre nuestros vehículos seminuevos
+                        disponibles para compraventa.
+                    </p>
+
+                    <div class="bmw-privacy__notice">
+                        Para dejar de recibir este tipo de comunicaciones deberá enviar un correo a
+                        <a href="mailto:Privacidad_BMW@bmw.com.mx">
+                            Privacidad_BMW@bmw.com.mx
+                        </a>
+                        solicitando su baja de la lista de distribución.
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+
+
+        <!-- III -->
+        <article id="privacidad-iii" class="bmw-privacy__section">
+
+            <div class="bmw-privacy__number">III.</div>
+
+            <div class="bmw-privacy__body">
+
+                <div class="bmw-privacy__label">
+                    CONSENTIMIENTO
+                </div>
+
+                <h2>
+                    Consentimiento para el tratamiento
+                    de datos personales sensibles,
+                    financieros y patrimoniales
+                </h2>
+
+                <p>
+                    En cumplimiento con lo dispuesto por la LFPDPPP, BMW México le informa
+                    que para recolectar y tratar sus datos sensibles, financieros y patrimoniales
+                    en los términos señalados en este Aviso, es preciso contar con su consentimiento
+                    expreso, por lo que al momento de recolectar este tipo de información solicitaremos
+                    su autorización.
+                </p>
+
+            </div>
+        </article>
+
+
+        <!-- IV -->
+        <article id="privacidad-iv" class="bmw-privacy__section bmw-privacy__section--wide">
+
+            <div class="bmw-privacy__number">IV.</div>
+
+            <div class="bmw-privacy__body">
+
+                <div class="bmw-privacy__label">
+                    TRANSFERENCIAS
+                </div>
+
+                <h2>
+                    Transferencias de información
+                </h2>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>a)</span> Ventas especiales</h3>
+
+                    <p>
+                        Su información podrá compartirse con BMW AG en Alemania, en reportes
+                        (disociados o no) de facturación sobre las ventas especiales realizadas
+                        por BMW México. Si el vehículo es facturado a un empleado de alguna de
+                        las empresas pertenecientes a BMW Group, la factura original será entregada
+                        a su empleador para resguardo y como constancia de que el empleado ha
+                        hecho uso del beneficio otorgado por su empleador para la adquisición
+                        de unidades.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>b)</span> BMW Group</h3>
+
+                    <ol class="bmw-privacy__list">
+
+                        <li>
+                            Las imágenes captadas por nuestro Circuito Cerrado de Televisión
+                            podrán compartirse con las empresas de BMW Group en México para
+                            deslindar responsabilidades.
+                        </li>
+
+                        <li>
+                            En aquellos casos en que se presuma un mal uso de unidades de flotilla,
+                            BMW México podrá compartir a su empleador la información relativa a
+                            la ubicación del vehículo.
+                        </li>
+
+                        <li>
+                            BMW México podrá compartir la información de los asistentes a eventos
+                            y viajes, incluyendo sus datos sensibles, con las empresas de BMW Group
+                            encargadas de la organización.
+                        </li>
+
+                        <li>
+                            BMW México compartirá el perfil de la trayectoria de periodistas y la
+                            información relativa a sus alergias con las empresas de BMW Group que
+                            organicen el evento.
+                        </li>
+
+                        <li>
+                            Las imágenes recolectadas y determinados datos obtenidos en términos
+                            de este Aviso podrán compartirse o difundirse con las demás empresas
+                            pertenecientes a BMW Group para cumplir con las mismas finalidades.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3>
+                        <span>c)</span>
+                        Asistentes a viajes de BMW México o BMW Group
+                    </h3>
+
+                    <p>
+                        Los datos personales generales de los asistentes, incluyendo periodistas,
+                        a los eventos de BMW México y BMW Group que se realicen en la Ciudad de
+                        México, al interior de la República Mexicana o en el extranjero, serán
+                        compartidos con la agencia de viajes contratada por BMW México para que
+                        realice los trámites y reservaciones correspondientes. Para esta transferencia
+                        es necesario contar con su consentimiento expreso.
+                    </p>
+
+                </div>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3><span>d)</span> Otros casos</h3>
+
+                    <p>
+                        BMW de México, S. A. de C. V., podrá transferir sus datos personales
+                        sin solicitar su consentimiento expreso, en caso de que se actualice
+                        algún supuesto de excepción previsto por la LFPDPPP.
+                    </p>
+
+                </div>
+
+            </div>
+        </article>
+
+
+        <!-- V -->
+        <article id="privacidad-v" class="bmw-privacy__section bmw-privacy__section--wide">
+
+            <div class="bmw-privacy__number">V.</div>
+
+            <div class="bmw-privacy__body">
+
+                <div class="bmw-privacy__label">
+                    DERECHOS ARCO
+                </div>
+
+                <h2>
+                    Derechos de Acceso, Rectificación,
+                    Cancelación, Oposición y revocación
+                    del consentimiento
+                </h2>
+
+                <p>
+                    Para ejercer sus derechos de acceso, rectificación, cancelación u oposición,
+                    así como revocar su consentimiento, deberá seguir el procedimiento que se
+                    detalla a continuación:
+                </p>
+
+
+                <div class="bmw-privacy__steps">
+
+                    <div class="bmw-privacy__step">
+
+                        <span>01</span>
+
+                        <div>
+                            <h3>Solicitud</h3>
+
+                            <p>
+                                Enviar un correo electrónico a
+                                <a href="mailto:Privacidad_BMW@bmw.com.mx">
+                                    Privacidad_BMW@bmw.com.mx
+                                </a>
+                                solicitando el formulario de solicitud ARCO.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bmw-privacy__step">
+
+                        <span>02</span>
+
+                        <div>
+                            <h3>Procesamiento</h3>
+
+                            <p>
+                                En caso que su solicitud haya sido enviada en día inhábil laboral,
+                                la misma será procesada a partir del día hábil siguiente al que
+                                la haya enviado.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bmw-privacy__step">
+
+                        <span>03</span>
+
+                        <div>
+                            <h3>Revisión</h3>
+
+                            <p>
+                                Si su petición no cumple con los requisitos legales, dentro de los
+                                cinco días hábiles siguientes a que haya sido recibida se le requerirá
+                                subsanar su solicitud en un término de diez días hábiles.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bmw-privacy__step">
+
+                        <span>04</span>
+
+                        <div>
+                            <h3>Respuesta</h3>
+
+                            <p>
+                                Su solicitud será contestada vía correo electrónico en un término
+                                de veinte días hábiles contados a partir de la fecha de recepción
+                                señalada en el Acuse de Recibo.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bmw-privacy__step">
+
+                        <span>05</span>
+
+                        <div>
+                            <h3>Ejecución</h3>
+
+                            <p>
+                                En caso de que su solicitud sea procedente de conformidad con la
+                                LFPDPPP y demás normatividad vigente, se otorgará el acceso,
+                                se rectificarán o cancelarán sus datos, se hará efectivo su
+                                derecho de oposición o se tendrá por revocado el consentimiento.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bmw-privacy__notice">
+
+                    <strong>Oficina de Privacidad</strong>
+
+                    Para solicitar el formulario ARCO o manifestar sus preferencias de privacidad:
+
+                    <a href="mailto:Privacidad_BMW@bmw.com.mx">
+                        Privacidad_BMW@bmw.com.mx
+                    </a>
+
+                </div>
+
+            </div>
+        </article>
+
+
+        <!-- VI -->
+        <article id="privacidad-vi" class="bmw-privacy__section">
+
+            <div class="bmw-privacy__number">VI.</div>
+
+            <div class="bmw-privacy__body">
+
+                <div class="bmw-privacy__label">
+                    PRIVACIDAD EN LÍNEA
+                </div>
+
+                <h2>
+                    Política de Privacidad
+                    en Línea
+                </h2>
+
+                <p>
+                    La información relativa al uso del portal www.bmw.com.mx se describe
+                    a continuación. Usted debe revisar regularmente esta Política de Privacidad
+                    ya que puede cambiar en cualquier momento a discreción de los administradores.
+                </p>
+
+                <p>
+                    Cuando usted ingresa al portal de BMW de México, S. A. de C. V.,
+                    nosotros registramos su dirección de Internet, el tipo de sistema operativo
+                    y navegador de Internet que usted usa. Adicionalmente podemos rastrear las
+                    partes del portal que usted está visitando.
+                </p>
+
+                <p>
+                    La información que obtenemos es utilizada para ayudarnos a crear una mejor
+                    experiencia para los usuarios de nuestro portal de Internet; todo este proceso
+                    se realiza sin que nosotros tengamos conocimiento de su nombre o de alguna
+                    otra información que nos permita identificarlo.
+                </p>
+
+
+                <div class="bmw-privacy__subsection">
+
+                    <h3>
+                        Cookies
+                    </h3>
+
+                    <p>
+                        La cookie es una breve información que el portal de Internet envía a su
+                        computadora, la cual queda almacenada en su disco duro. La próxima vez
+                        que usted ingrese a nuestro portal, podremos usar la información almacenada
+                        en la cookie para facilitarle el uso de nuestro sitio de Internet.
+                    </p>
+
+                    <p>
+                        BMW México utiliza cookies para administrar las sesiones dentro la plataforma
+                        S-Gate y del Retail B2B Portal. Estas cookies se usan mientras dure la sesión,
+                        y la única información personalizada que se recibe es la ID de la sesión
+                        individual.
+                    </p>
+
+                </div>
+
+            </div>
+        </article>
+
+
+        <!-- VII -->
+        <article id="privacidad-vii" class="bmw-privacy__section">
+
+            <div class="bmw-privacy__number">VII.</div>
+
+            <div class="bmw-privacy__body">
+
+                <div class="bmw-privacy__label">
+                    CONTACTO
+                </div>
+
+                <h2>
+                    Contacto de la Oficina
+                    de Privacidad
+                </h2>
+
+                <p>
+                    Si tiene alguna duda sobre el contenido, interpretación o alcance de este
+                    Aviso de Privacidad, políticas, manejo de su información personal y sobre
+                    cómo manifestar sus preferencias de privacidad, puede contactar a nuestra
+                    Oficina de Privacidad vía correo electrónico.
+                </p>
+
+
+                <a class="bmw-privacy__email"
+                   href="mailto:Privacidad_BMW@bmw.com.mx">
+
+                    <span>OFICINA DE PRIVACIDAD</span>
+
+                    Privacidad_BMW@bmw.com.mx
+
+                </a>
+
+            </div>
+        </article>
+
+
+        <!-- VIII -->
+        <article id="privacidad-viii" class="bmw-privacy__section">
+
+            <div class="bmw-privacy__number">VIII.</div>
+
+            <div class="bmw-privacy__body">
+
+                <div class="bmw-privacy__label">
+                    ACTUALIZACIONES
+                </div>
+
+                <h2>
+                    Cambios en el Aviso
+                    de Privacidad
+                </h2>
+
+                <p>
+                    Este Aviso de Privacidad estará vigente a partir de la última fecha
+                    de actualización y podrá ser modificado por el responsable en términos
+                    de la normatividad aplicable.
+                </p>
+
+                <p>
+                    Cualquier cambio será comunicado a través de la publicación del nuevo
+                    Aviso de Privacidad a través del sitio www.bmw.com.mx.
+                </p>
+
+
+                <div class="bmw-privacy__date">
+
+                    <span>ÚLTIMA ACTUALIZACIÓN</span>
+
+                    <strong>
+                        25 ABRIL 2025
+                    </strong>
+
+                </div>
+
+            </div>
+        </article>
+
+
+    </div>
+
+
+    <!-- CIERRE -->
+    <div class="bmw-privacy__closing">
+
+        <div class="bmw-privacy__closing-line"></div>
+
+        <p>
+            BMW DE MÉXICO
+        </p>
+
+        <span>
+            EL FUTURO, SIEMPRE CONECTADO
+        </span>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* =========================================================
+   BMW PRIVACY — AISLADO
+   No toca header, footer, body, container, row, col, etc.
+========================================================= */
+
+.bmw-privacy{
+    --bmw-blue:#0066b1;
+    --bmw-blue-light:#1c8bd0;
+    --bmw-dark:#071019;
+    --bmw-text:#182536;
+    --bmw-muted:#687585;
+    --bmw-line:#dfe4e8;
+    --bmw-bg:#f7f8fa;
+
+    width:100%;
+    background:var(--bmw-bg);
+    color:var(--bmw-text);
+    font-family:Inter, Arial, Helvetica, sans-serif;
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.bmw-privacy__hero{
+    position:relative;
+    min-height:470px;
+    display:flex;
+    align-items:flex-end;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,10,17,.98) 0%,
+            rgba(4,10,17,.88) 42%,
+            rgba(4,10,17,.38) 75%,
+            rgba(4,10,17,.70) 100%
+        ),
+        radial-gradient(
+            circle at 78% 40%,
+            rgba(0,102,177,.28),
+            transparent 35%
+        ),
+        #071019;
+}
+
+.bmw-privacy__hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 0%,
+            rgba(255,255,255,.025) 50%,
+            transparent 50%
+        );
+    pointer-events:none;
+}
+
+.bmw-privacy__hero-inner{
+    position:relative;
+    z-index:2;
+    width:min(1240px, calc(100% - 80px));
+    margin:0 auto;
+    padding:100px 0 72px;
+}
+
+.bmw-privacy__eyebrow{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#fff;
+    font-size:10px;
+    font-weight:500;
+    letter-spacing:4px;
+    margin-bottom:24px;
+}
+
+.bmw-privacy__eyebrow:before{
+    content:"";
+    width:46px;
+    height:2px;
+    background:var(--bmw-blue-light);
+}
+
+.bmw-privacy__hero h1{
+    margin:0;
+    max-width:760px;
+    color:#fff;
+    font-size:clamp(56px, 7vw, 96px);
+    line-height:.94;
+    font-weight:300;
+    letter-spacing:-4px;
+}
+
+.bmw-privacy__hero h1 span{
+    color:#aeb8c3;
+}
+
+.bmw-privacy__hero-subtitle{
+    margin:32px 0 0;
+    color:#dce3e9;
+    font-size:10px;
+    letter-spacing:5px;
+    font-weight:500;
+}
+
+.bmw-privacy__hero-meta{
+    margin-top:18px;
+    color:rgba(255,255,255,.48);
+    font-size:11px;
+    letter-spacing:.5px;
+}
+
+
+/* =========================================================
+   INDEX
+========================================================= */
+
+.bmw-privacy__index{
+    position:sticky;
+    top:0;
+    z-index:50;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    min-height:66px;
+
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid var(--bmw-line);
+
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.bmw-privacy__index::-webkit-scrollbar{
+    display:none;
+}
+
+.bmw-privacy__index a{
+    position:relative;
+    flex:0 0 auto;
+
+    padding:25px 17px 23px;
+
+    color:#596675;
+    text-decoration:none;
+
+    font-size:10px;
+    letter-spacing:.4px;
+    white-space:nowrap;
+
+    transition:.25s ease;
+}
+
+.bmw-privacy__index a:hover{
+    color:var(--bmw-blue);
+}
+
+.bmw-privacy__index a.is-active{
+    color:#122236;
+}
+
+.bmw-privacy__index a.is-active:after{
+    content:"";
+    position:absolute;
+    left:17px;
+    right:17px;
+    bottom:0;
+    height:2px;
+    background:var(--bmw-blue);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.bmw-privacy__content{
+    width:min(1240px, calc(100% - 80px));
+    margin:0 auto;
+}
+
+.bmw-privacy__section{
+    display:grid;
+    grid-template-columns:150px minmax(0, 1fr);
+    gap:50px;
+
+    padding:100px 0;
+
+    border-bottom:1px solid var(--bmw-line);
+}
+
+.bmw-privacy__section--wide{
+    grid-template-columns:150px minmax(0, 1fr);
+}
+
+.bmw-privacy__number{
+    color:var(--bmw-blue);
+    font-size:17px;
+    font-weight:400;
+    letter-spacing:1px;
+    padding-top:7px;
+}
+
+.bmw-privacy__body{
+    max-width:920px;
+}
+
+.bmw-privacy__label{
+    margin-bottom:18px;
+
+    color:var(--bmw-blue);
+    font-size:9px;
+    font-weight:600;
+    letter-spacing:3px;
+}
+
+.bmw-privacy__body h2{
+    margin:0 0 30px;
+
+    color:var(--bmw-text);
+
+    font-size:clamp(30px, 3vw, 46px);
+    line-height:1.08;
+    font-weight:300;
+    letter-spacing:-1.6px;
+}
+
+.bmw-privacy__body p{
+    margin:0 0 20px;
+
+    color:#596675;
+
+    font-size:15px;
+    line-height:1.9;
+    font-weight:400;
+}
+
+.bmw-privacy__body p:last-child{
+    margin-bottom:0;
+}
+
+
+/* =========================================================
+   SUBSECCIONES
+========================================================= */
+
+.bmw-privacy__subsection{
+    margin-top:58px;
+    padding-top:38px;
+
+    border-top:1px solid var(--bmw-line);
+}
+
+.bmw-privacy__subsection > h3{
+    margin:0 0 22px;
+
+    color:var(--bmw-text);
+
+    font-size:22px;
+    line-height:1.25;
+    font-weight:400;
+    letter-spacing:-.4px;
+}
+
+.bmw-privacy__subsection > h3 span{
+    display:inline-block;
+    width:31px;
+
+    color:var(--bmw-blue);
+    font-size:12px;
+    font-weight:600;
+}
+
+.bmw-privacy__item{
+    margin:0 0 38px;
+}
+
+.bmw-privacy__item h4{
+    margin:0 0 12px;
+
+    color:#1c2b3b;
+
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:-.2px;
+}
+
+.bmw-privacy__item p{
+    margin-bottom:18px;
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.bmw-privacy__notice{
+    position:relative;
+
+    margin:28px 0;
+    padding:22px 25px 22px 27px;
+
+    background:#eef4f8;
+    border-left:2px solid var(--bmw-blue);
+
+    color:#536272;
+
+    font-size:14px;
+    line-height:1.7;
+}
+
+.bmw-privacy__notice strong{
+    display:block;
+    margin-bottom:6px;
+
+    color:#17283a;
+    font-size:11px;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+}
+
+.bmw-privacy__notice--quiet{
+    background:#f0f1f3;
+    border-left-color:#aeb7c0;
+}
+
+.bmw-privacy__notice a{
+    color:var(--bmw-blue);
+    text-decoration:none;
+}
+
+.bmw-privacy__notice a:hover{
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   LISTAS
+========================================================= */
+
+.bmw-privacy__list{
+    margin:25px 0 0;
+    padding:0;
+    list-style:none;
+    counter-reset:privacy-counter;
+}
+
+.bmw-privacy__list li{
+    position:relative;
+
+    margin:0;
+    padding:20px 0 20px 55px;
+
+    border-top:1px solid var(--bmw-line);
+
+    color:#596675;
+    font-size:15px;
+    line-height:1.85;
+
+    counter-increment:privacy-counter;
+}
+
+.bmw-privacy__list li:before{
+    content:counter(privacy-counter, decimal-leading-zero);
+
+    position:absolute;
+    left:0;
+    top:20px;
+
+    color:var(--bmw-blue);
+
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+
+/* =========================================================
+   ARCO STEPS
+========================================================= */
+
+.bmw-privacy__steps{
+    margin-top:45px;
+    border-top:1px solid var(--bmw-line);
+}
+
+.bmw-privacy__step{
+    display:grid;
+    grid-template-columns:70px 1fr;
+    gap:30px;
+
+    padding:30px 0;
+
+    border-bottom:1px solid var(--bmw-line);
+}
+
+.bmw-privacy__step > span{
+    color:var(--bmw-blue);
+
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.bmw-privacy__step h3{
+    margin:0 0 8px;
+
+    color:#182536;
+
+    font-size:18px;
+    font-weight:500;
+}
+
+.bmw-privacy__step p{
+    margin:0;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.bmw-privacy__email{
+    display:inline-flex;
+    flex-direction:column;
+    gap:8px;
+
+    margin-top:30px;
+    padding:25px 30px;
+
+    color:#17283a;
+    text-decoration:none;
+
+    background:#fff;
+    border:1px solid var(--bmw-line);
+
+    transition:.25s ease;
+}
+
+.bmw-privacy__email span{
+    color:var(--bmw-blue);
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.bmw-privacy__email{
+    font-size:16px;
+}
+
+.bmw-privacy__email:hover{
+    border-color:var(--bmw-blue);
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   FECHA
+========================================================= */
+
+.bmw-privacy__date{
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    margin-top:40px;
+    padding-top:25px;
+
+    border-top:1px solid var(--bmw-line);
+}
+
+.bmw-privacy__date span{
+    color:#7c8793;
+
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.bmw-privacy__date strong{
+    color:#1a2a3b;
+
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:1px;
+}
+
+
+/* =========================================================
+   CIERRE
+========================================================= */
+
+.bmw-privacy__closing{
+    width:min(1240px, calc(100% - 80px));
+    margin:0 auto;
+
+    padding:55px 0 70px;
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.bmw-privacy__closing-line{
+    width:38px;
+    height:2px;
+    background:var(--bmw-blue);
+}
+
+.bmw-privacy__closing p{
+    margin:0;
+
+    color:#17283a;
+
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.bmw-privacy__closing span{
+    margin-left:auto;
+
+    color:#7b8793;
+
+    font-size:9px;
+    letter-spacing:4px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .bmw-privacy__hero{
+        min-height:430px;
+    }
+
+    .bmw-privacy__hero-inner{
+        width:calc(100% - 48px);
+        padding-bottom:60px;
+    }
+
+    .bmw-privacy__content{
+        width:calc(100% - 48px);
+    }
+
+    .bmw-privacy__section{
+        grid-template-columns:70px minmax(0,1fr);
+        gap:30px;
+        padding:75px 0;
+    }
+
+    .bmw-privacy__index{
+        justify-content:flex-start;
+    }
+
+    .bmw-privacy__index a{
+        padding-left:13px;
+        padding-right:13px;
+    }
+
+    .bmw-privacy__index a.is-active:after{
+        left:13px;
+        right:13px;
+    }
+
+    .bmw-privacy__closing{
+        width:calc(100% - 48px);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .bmw-privacy__hero{
+        min-height:390px;
+    }
+
+    .bmw-privacy__hero-inner{
+        width:calc(100% - 36px);
+        padding:80px 0 45px;
+    }
+
+    .bmw-privacy__hero h1{
+        font-size:54px;
+        letter-spacing:-2.5px;
+    }
+
+    .bmw-privacy__hero-subtitle{
+        font-size:8px;
+        letter-spacing:3px;
+    }
+
+    .bmw-privacy__hero-meta{
+        font-size:10px;
+    }
+
+    .bmw-privacy__content{
+        width:calc(100% - 36px);
+    }
+
+    .bmw-privacy__section{
+        display:block;
+        padding:60px 0;
+    }
+
+    .bmw-privacy__number{
+        margin-bottom:18px;
+    }
+
+    .bmw-privacy__body h2{
+        font-size:32px;
+        letter-spacing:-1px;
+    }
+
+    .bmw-privacy__body p{
+        font-size:14px;
+        line-height:1.8;
+    }
+
+    .bmw-privacy__subsection{
+        margin-top:45px;
+        padding-top:30px;
+    }
+
+    .bmw-privacy__subsection > h3{
+        font-size:19px;
+    }
+
+    .bmw-privacy__step{
+        grid-template-columns:45px 1fr;
+        gap:15px;
+    }
+
+    .bmw-privacy__date{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .bmw-privacy__closing{
+        width:calc(100% - 36px);
+        display:block;
+        padding:40px 0 55px;
+    }
+
+    .bmw-privacy__closing-line{
+        margin-bottom:22px;
+    }
+
+    .bmw-privacy__closing span{
+        display:block;
+        margin:12px 0 0;
+    }
+
+}
+
+</style>
+
+
+
+<footer>
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <img src="logo.svg" style="max-width:150px;padding-top: 20%;">
+        </div>
+        <div class="col-sm-3" style="text-align:center;padding-top: 5px;">
+          <b>
+            <br><a href="aviso.html" style="color:white;">Aviso de privacidad</a>
+            <br><a href="terminos.html" style="color:white;">Términos y Condiciones</a>
+            <br><a href="contacto.html" style="color:white;">Contáctanos</a>
+          </b>
+        </div>
+        <div class="col-sm-3" style="text-align:center;margin-top:5px;color:white;">
+          <br>
+          <a href="mailto:ventas@bmw.com.mx.werke.cc" style="color:white;">
+            ventas@bmw.com.mx.werke.cc
+          </a>
+          <br>
+          <b>Whatsapp:</b> 56 4813 6159<br>
+          <b>Teléfono:</b> 55 9317 8433<br><br>
+          <p>
+         Av. Javier Barros Sierra 495-Piso 14, Oficina 1401,<br> Santa Fe, Álvaro Obregón, 01376 <br>Ciudad de México, CDMX
+          </p>
+        </div>
+        <div class="col-sm-4" style="text-align:center;">
+          <img src="mm.png" style="max-width:250px;padding-top:10%;">
+        </div>
+      </div>
+    </div>
+    <div class="payment-bar">
+      <img src="visa.png">
+      <img src="master.png">
+      <img src="spei.png">
+      <img src="oxxo.png">
+    </div>
+    <nav style="background: linear-gradient(135deg, #020812 0%, #0B2038 48%, #1A4B70 100%);color:white;text-align:center;">
+      <b>Todos los derechos reservados<br>2026</b>
+    </nav>
+  </div>
+</footer>
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+function toggleMenu(){
+
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+
+}
+
+menuToggle.addEventListener("click", toggleMenu);
+
+overlay.addEventListener("click", toggleMenu);
+
+document.querySelectorAll(".menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+
+
+<style>
+  .redes-flotantes {
+position: fixed;
+right: 8px;
+top: 86%;
+z-index: 20;
+max-width: 80px;
+
+}
+.redes-flotantes img {        max-width: 75%;
+
+float: right; clear: right;
+ margin: 5px;
+-moz-transform: scale(.8) ;
+-webkit-transform: scale(.8) ;
+-o-transform: scale(.8) ;
+-ms-transform: scale(.8) ;
+transform: scale(.8) ;
+-webkit-transition: all .2s ease-in-out;
+-moz-transition: all .2s ease-in-out;
+-o-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}</style>
+<div class='redes-flotantes'>
+<div class="btn-whatsapp">
+<a href="https://wa.me/message/E3RAKZQ3EZKPK1">
+<img src="w.png" alt="">
+</a>
+</div>
+
+
+
+</body>
+</html>

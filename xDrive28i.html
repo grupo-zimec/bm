@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="cms/font-awesome.min.css" rel="stylesheet">
+<link data-turbolinks-track="true"
+      href="cms/assets/application.css"
+      media="all"
+      rel="stylesheet">
+
+<link data-turbolinks-track="true"
+      href="cms/application.css"
+      media="all"
+      rel="stylesheet">
+
+<link href="css/main.css"
+      rel="stylesheet">
+
+<link href="css/font-awesome.min.css"
+      rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link data-turbolinks-track="true" href="cms/assets/application.css" media="all" rel="stylesheet" />
+  <link rel="icon" href="favi.png">
+  <script src="cms/assets/application.js"></script>
+  <script src="cms/assets/imageReplace.js"></script>
+  <link href="css/main.css">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="cms/assets/responsiveslides.css" media="screen" rel="stylesheet" />
+  <script src="cms/assets/responsiveslides.js"></script>   
+<title>BMW | Luxury</title>
+ <style >
+    .caracteristicas-linea{
+  font-size: 16px;
+}
+
+.caracteristicas-linea .sep{
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+  .btn-buy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #670a01;
+  color: #fff;
+
+  padding: 10px 22px;
+  border-radius: 999px; /* pastilla real */
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.btn-buy i {
+  font-size: 16px;
+}
+
+.btn-buy:hover {
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-buy:active {
+  transform: translateY(0);
+}
+
+  .redes-flotantes {
+position: fixed;
+right: 8px;
+top: 90%;
+z-index: 20;
+max-width: 80px;
+
+}
+.redes-flotantes img {        max-width: 75%;
+
+float: right; clear: right;
+ margin: 5px;
+-moz-transform: scale(.8) ;
+-webkit-transform: scale(.8) ;
+-o-transform: scale(.8) ;
+-ms-transform: scale(.8) ;
+transform: scale(.8) ;
+-webkit-transition: all .2s ease-in-out;
+-moz-transition: all .2s ease-in-out;
+-o-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}
+/* =========================
+   BARRA DE PAGOS
+========================= */
+/* --- FIX BARRA DE PAGOS EN MÓVIL --- */
+.payment-bar {
+  flex-wrap: wrap;              /* permite bajar a otra línea */
+  padding: 10px 5px;
+}
+
+.payment-bar img {
+  width: 70px;                 /* más pequeño en móvil */
+  margin: 5px;
+}
+
+/* Ajuste fino solo para pantallas chicas */
+@media (max-width: 480px) {
+  .payment-bar {
+    gap: 10px;
+  }
+
+  .payment-bar img {
+    width: 60px;
+  }
+}
+
+
+        hr{
+        
+        border-color: black;
+      }
+footer{
+     background:black;
+  
+    text-align: center;
+  }
+.container4{
+  margin-right: 15%;margin-left: 15%;
+  text-align: center;
+}
+
+    .container3{
+  color: white;
+  left: 50%;
+  text-align: center;
+ background: linear-gradient( #e02b20, #670a01);  
+ margin-top: 14px; 
+}
+
+.container5{
+ margin-top: 10%; 
+ margin-top: 10%;
+ margin-right: 10%;
+ margin-left:  10%; 
+ text-align: center;
+}
+
+      .interior h2, .interior h3, .interior h4, .interior p, .pagina h2, .pagina h3, .pagina h4, .pagina p {
+  margin-bottom: 17px;
+}
+
+       .item-control i {
+  background: #fff;
+  color: #f00;
+  font-size: 20px;
+  padding: 5px 10px;
+  align-items: center;
+}
+
+
+
+.recommended-item-control i {
+  background: none repeat scroll 0 0 #bc955c;
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 4px 10px;
+}
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.recommended-item-control i {
+  background: none repeat scroll 0 0 #bc955c;
+  color: #FFFFFF;
+  font-size: 20px;
+  padding: 4px 10px;}
+nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #bc955c;
+  border: 0px;
+  color: #FFFFFF;
+  cursor: default;
+  margin-right: 0;
+  margin-left: 0;
+  }
+  a {
+    color: white;
+  }
+  .nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #bc955c;
+  border: 0px;
+  color: #FFFFFF;
+  cursor: default;
+  margin-right: 0;
+  margin-left: 0;
+}
+.nav-tabs > li > a:hover {
+  border-color: #0c231e #0c231e #0c231e;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+.nav-tabs > li > a {
+  background-color: #0c231e;
+  margin-right: 0px;
+  border: 1px solid #d5d5d5;
+  border-radius: 0px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+.shop-details-tab {
+
+  
+    margin-bottom: 4 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+}.category-tab ul {
+  background: #0c231e;
+  border-bottom: 1px solid #bc955c;
+  list-style: none outside none;
+  margin: 0 0 30px;
+  padding: 0;
+  width: 100%;
+}.navbar-brand img {
+  height: 55px;      /* AJUSTA AQUÍ */
+  width: auto;
+  max-height: none;  /* evita que Bootstrap lo aplaste */
+}
+
+      
+
+  </style>            
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+
+
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    background:#080808;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+
+    z-index:9999;
+
+    border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    height:100%;
+
+}
+
+.logo img{
+    display:block;
+    width:auto;
+    height:88px;
+    object-fit:contain;
+    padding: 20px;
+}
+
+
+/*
+   Si todavía no tienes el logo,
+   puedes usar temporalmente esto.
+*/
+
+.logo-text{
+    font-size:23px;
+    letter-spacing:5px;
+    font-weight:500;
+}
+
+/* ==================================================
+   HAMBURGER
+================================================== */
+
+.menu-toggle{
+    width:48px;
+    height:48px;
+ max-width: 100%;
+    border:1px solid rgba(255,255,255,.25);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:6px;
+
+    cursor:pointer;
+
+    background:transparent;
+
+    transition:.3s;
+
+    position:relative;
+    z-index:1000;
+}
+
+.menu-toggle span{
+    width:21px;
+    height:1px;
+    background:#f5f2eb;
+
+    transition:.3s;
+}
+
+.menu-toggle:hover{
+    background:#f5f2eb;
+}
+
+.menu-toggle:hover span{
+    background:#080808;
+}
+
+/* ==================================================
+   MENU
+================================================== */
+
+.menu{
+
+    position:fixed;
+
+    top:86px;
+    right:0;
+
+    width:420px;
+    height:calc(100vh - 86px);
+
+    background:#0b0b0b;
+
+    padding:55px 50px;
+
+    z-index:10000;
+
+    transform:translateX(100%);
+
+    transition:transform .45s cubic-bezier(.77,0,.18,1);
+
+    border-left:1px solid rgba(255,255,255,.10);
+
+    box-shadow:-20px 0 60px rgba(0,0,0,.5);
+}
+
+.menu.active{
+    transform:translateX(0);
+}
+
+.menu-label{
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:#777;
+
+    text-transform:uppercase;
+
+    margin-bottom:30px;
+}
+
+.menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:22px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.09);
+
+    text-decoration:none;
+
+    color:#f5f2eb;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:29px;
+
+    transition:.3s;
+}
+
+.menu a span{
+
+    font-family:Inter,sans-serif;
+
+    font-size:11px;
+
+    color:#666;
+
+    letter-spacing:2px;
+}
+
+.menu a:hover{
+    padding-left:12px;
+    color:#cfcac1;
+}
+
+
+
+/* --- FIX BARRA DE PAGOS EN MÓVIL --- */
+.payment-bar {
+  flex-wrap: wrap;              /* permite bajar a otra línea */
+  padding: 10px 5px;
+}
+
+.payment-bar img {
+  width: 70px;                 /* más pequeño en móvil */
+  margin: 5px;
+}
+
+/* Ajuste fino solo para pantallas chicas */
+@media (max-width: 480px) {
+  .payment-bar {
+    gap: 10px;
+  }
+
+  .payment-bar img {
+    width: 60px;
+  }
+}
+footer{
+    background:black;
+  
+    text-align: center;
+  }
+/* ==================================================
+   OVERLAY
+================================================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(3px);
+
+    z-index:9998;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+}
+
+.overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    padding-top:86px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#090909;
+}
+
+.hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.95) 0%,
+            rgba(0,0,0,.70) 42%,
+            rgba(0,0,0,.20) 100%
+        ),
+        url("https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=2200&q=90")
+        center center / cover no-repeat;
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    padding:80px 8%;
+}
+
+.hero-kicker{
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#aaa59c;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-weight:400;
+
+    font-size:clamp(55px,8vw,105px);
+
+    line-height:.92;
+
+    max-width:750px;
+
+    margin-bottom:30px;
+}
+
+.hero h1 span{
+
+    display:block;
+
+    color:#d9d5cd;
+}
+
+.hero-description{
+
+    max-width:480px;
+
+    color:#c1bdb5;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:16px 25px;
+
+    background:#f3f0e9;
+
+    color:#090909;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#d6d1c8;
+
+    gap:40px;
+}
+
+/* ==================================================
+   MODELOS
+================================================== */
+
+.models{
+
+    background:#efede7;
+
+    color:#111;
+
+    padding:120px 6%;
+}
+
+.section-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    margin-bottom:55px;
+}
+
+.section-kicker{
+
+    display:block;
+
+    color:#777;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+}
+
+.section-title{
+
+    font-family:'Playfair Display',serif;
+
+    font-weight:400;
+
+    font-size:clamp(45px,6vw,75px);
+}
+
+.section-description{
+
+    max-width:350px;
+
+    color:#666;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.models-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.model{
+
+    position:relative;
+
+    min-height:560px;
+
+    background:#111;
+
+    overflow:hidden;
+
+    color:white;
+}
+
+.model-image{
+
+    position:absolute;
+
+    inset:0;
+
+    background-size:cover;
+
+    background-position:center;
+
+    transition:transform .8s ease;
+}
+
+.model:hover .model-image{
+
+    transform:scale(1.06);
+}
+
+.model-1{
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.95)
+    ),
+    url("ba1.png");
+}
+
+.model-2{
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.95)
+    ),
+    url("ba3.png");
+}
+
+.model-3{
+
+    background-image:
+    linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0,0,0,.95)
+    ),
+    url("ba2.png");
+}
+
+.model-info{
+
+    position:absolute;
+
+    left:30px;
+    right:30px;
+    bottom:30px;
+
+    z-index:2;
+}
+
+.model-info small{
+
+    color:#aaa;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.model-info h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:34px;
+
+    font-weight:400;
+
+    margin:8px 0 22px;
+}
+
+.model-link{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    border-bottom:1px solid #777;
+
+    padding-bottom:6px;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:767px){
+
+    .header{
+       
+        height:76px;
+    }
+
+ 
+    .logo img{
+        height:88px;
+    }
+
+    .menu{
+        top:76px;
+        height:calc(100vh - 76px);
+    }
+
+    .hero{
+        padding-top:76px;
+    }
+
+    .models-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-top{
+        display:block;
+    }
+
+    .section-description{
+        margin-top:25px;
+    }
+
+  
+}
+
+@media(max-width:600px){
+
+    .menu{
+        width:100%;
+        padding:40px 30px;
+    }
+
+    .hero-content{
+        padding:70px 7%;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+    .models{
+        padding:80px 6%;
+    }
+
+    .model{
+        min-height:480px;
+    }
+
+   
+}
+
+
+/* MENU MOVIL — CORRECCIÓN */
+.menu {
+    box-sizing: border-box;
+}
+
+.menu * {
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        top: 76px;
+        right: 0;
+        width: 100%;
+        max-width: 100vw;
+        height: calc(100vh - 76px);
+        padding: 40px 30px;
+        box-sizing: border-box;
+    }
+}
+
+</style>
+</head>
+<hr>
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="header">
+    <a href="#" class="logo" >
+        <img src="logo.svg" alt="BMW" style="padding-left: 20%;">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- ==================================================
+     OVERLAY
+================================================== -->
+
+<div class="overlay" id="overlay"></div>
+
+
+<!-- ==================================================
+     MENU
+================================================== -->
+
+<nav class="menu" id="menu">
+
+
+
+    <a href="index.html">
+        Inicio
+    </a>
+
+    <a href="catalogo.html">
+        Catalogo
+    </a>
+
+    <a href="terminos.html">
+        Terminos y condiciones
+    </a>
+
+    <a href="aviso.html">
+        Aviso de privacidad
+    </a>
+
+    <a href="contacto.html">
+        Contacto
+    </a>
+
+</nav>
+
+
+<div class="container">
+   <div class="col-sm-12" style="text-align:center;">    
+    
+
+    <div class="">
+      
+      <div class="marquee-padding">
+     
+     
+      <section>
+      <div class="col-md-7 col-xs-12 col-sm-12 pull-left" tabindex="0">
+          
+        <div class="col-sm-12  padding-left">
+          <div class="product-details"><!--product-details-->
+            <div class="col-sm-6">
+              <div class="view-product"class="img img-responsive">
+                <img src="cms/4/1.jpg" class="img img-responsive">
+                
+              </div>
+
+
+
+              <div id="similar-product" class="carousel slide" data-ride="carousel">
+                
+                  <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                    <div class="item active">
+                      <a href="cms/4/2.jpg"><img src="cms/4/2.jpg"></a>
+                      </div>
+                     <div class="item ">
+                      <a href="cms/4/3.jpg"><img src="cms/4/3.jpg"></a>
+                    </div>              
+                     <div class="item ">
+                      <a href="cms/4/4.jpg"><img src="cms/4/4.jpg"></a>        
+                    </div>
+                     <div class="item ">
+                      <a href="cms/4/5.jpg"><img src="cms/4/5.jpg"></a>
+                    </div>
+                     <div class="item ">
+                      <a href="cms/4/6.jpg"><img src="cms/4/6.jpg"></a>
+                    </div>
+                     <div class="item ">
+                      <a href="cms/4/7.jpg"><img src="cms/4/7.jpg"></a>
+                      </div>
+                      <div class="item ">
+                      <a href="cms/4/8.jpg"><img src="cms/4/8.jpg"></a>
+                      </div>
+                      <div class="item ">
+                      <a href="cms/4/9.jpg"><img src="cms/4/9.jpg"></a>
+                      </div>
+                    
+                 <div class="item ">
+                      <a href="cms/4/10.jpg"><img src="cms/4/10.jpg"></a>                    </div>              
+                     <div class="item ">
+                      <a href="cms/4/11.jpg"><img src="cms/4/11.jpg"></a>        
+                    </div>
+                  <div class="item ">
+                      <a href="cms/4/12.jpg"><img src="cms/4/12.jpg"></a>        
+                    </div>
+                  <div class="item ">
+                      <a href="cms/4/13.jpg"><img src="cms/4/13.jpg"></a>        
+                    </div>
+                  <div class="item ">
+                      <a href="cms/4/14.jpg"><img src="cms/4/14.jpg"></a>        
+                    </div>
+                  <div class="item ">
+                      <a href="cms/4/15.jpg"><img src="cms/4/15.jpg"></a>        
+                    </div>
+                <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/16.jpg"></a>        
+                    </div>
+                     <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/17.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/18.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/19.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/20.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/21.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/22.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/23.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/24.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/25.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/26.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/27.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/28.jpg"></a>        
+                    </div>  <div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/29.jpg"></a>        
+                    </div><div class="item ">
+                      <a href="cms/4/16.jpg"><img src="cms/4/30.jpg"></a>        
+                    </div>
+                                  
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left item-control" href="#similar-product" data-slide="prev">
+                  <i class="fa fa-angle-left"></i>
+                  </a>
+                  <a class="right item-control" href="#similar-product" data-slide="next">
+                  <i class="fa fa-angle-right"></i>
+                  </a>
+              </div>
+
+            </div>
+            <div class="col-sm-6 ">
+              <div class="product-information"><!--/product-information-->
+<h3>BMW X1 xDrive28i 2023</h3>
+<h6>ID:187227</h6>
+<span><h4>  $436,356.00</h4></span>
+
+<button type="button" style="background-color:#000;">
+    <i class="fa-solid fa-check" style="color:white;">
+        <a href="solicitud.html" style="color:#fff;font-size:11px;">Comprar</a>
+    </i>
+</button>
+
+<p>
+    <b><br>Numero de Lote:</b> A5723
+<b><br>Color exterior:</b> Storm Bay Metallic
+<b><br>Color interior:</b> Storm Bay Metallic
+<b><br>Tipo de motor:</b> 4 cilindros en línea, 4 tiempos, 1,998 cc, BMW TwinPower Turbo
+<b><br>Potencia máxima:</b> 241 hp (180 kW) a 4,500–6,500 rpm
+<b><br>Autonomía:</b> Aproximadamente 550 km, según condiciones de manejo
+<b><br>Transmisión:</b> Automática de 7 velocidades, de doble embrague
+    <b><br>Kilometraje:</b> 25.7495
+</p>
+</div><!--/product-information-->              </div>
+              </div>
+              </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+      </div>
+
+      <div class="col-md-4 col-xs-12 pull-right"style="text-align:left;">
+
+<div class="">
+
+    <div class="panel-group category-products" id="accordian" style="margin-bottom: 10px;">
+
+        <br><br>
+
+        <!-- MOTOR -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#motor">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                        Motor
+                    </a>
+                </h4>
+            </div>
+
+            <div id="motor" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <b>Descripción:</b> Motor BMW TwinPower Turbo de cuatro cilindros en línea, cuatro tiempos, con turbocompresor
+                    <br><br>
+
+                    <b>Tipo de propulsión:</b> Gasolina
+                    <br><br>
+
+                    <b>Cilindrada:</b> 1,998 cc
+                    <br><br>
+
+                    <b>Potencia máxima:</b> 241 Hp (180 kW) entre 4,500 y 6,500 rpm
+                    <br><br>
+
+                    <b>Torque máximo:</b> 295 lb-pie (400 Nm) entre 1,500 y 4,000 rpm
+                    <br><br>
+
+                    <b>Configuración:</b> Cuatro cilindros en línea, cuatro válvulas por cilindro
+                    <br><br>
+
+                    <b>Sistema de alimentación:</b> Inyección directa de alta precisión
+                    <br><br>
+
+                    <b>Refrigeración:</b> Sistema de enfriamiento líquido
+                    <br><br>
+
+                    <b>Distribución:</b> VALVETRONIC y doble VANOS
+                    <br><br>
+
+                    <b>Diámetro x carrera:</b> 82.0 x 94.6 mm
+                    <br><br>
+
+                    <b>Relación de compresión:</b> 10.5:1
+                    <br><br>
+
+                    <b>Combustible:</b> Gasolina
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- TRANSMISION -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#transmision">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                        Transmisión
+                    </a>
+                </h4>
+            </div>
+
+            <div id="transmision" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <b>Tipo de transmisión:</b> Automática Steptronic de doble embrague
+                    <br><br>
+
+                    <b>Cambios:</b> 7 velocidades
+                    <br><br>
+
+                    <b>Tracción:</b> Integral BMW xDrive (AWD)
+                    <br><br>
+
+                    <b>Sistema de tracción:</b> Distribución inteligente de potencia entre los ejes delantero y trasero
+                    <br><br>
+
+                    <b>Tipo de caja:</b> Transmisión de doble embrague (DCT)
+                    <br><br>
+
+                    <b>Accionamiento:</b> Electrónico mediante selector de cambios
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ENCENDIDO Y SISTEMA ELECTRICO -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#encendido">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                        Encendido y sistema eléctrico
+                    </a>
+                </h4>
+            </div>
+
+            <div id="encendido" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <b>Sistema de encendido:</b> Electrónico
+                    <br><br>
+
+                    <b>Sistema de arranque:</b> Eléctrico
+                    <br><br>
+
+                    <b>Sistema eléctrico:</b> Sistema eléctrico de 12 V
+                    <br><br>
+
+                    <b>Sistema de carga:</b> Alternador
+                    <br><br>
+
+                    <b>Gestión del motor:</b> Gestión electrónica BMW
+                    <br><br>
+
+                    <b>Inyección:</b> Inyección directa de alta precisión
+                    <br><br>
+
+                    <b>Función Start/Stop:</b> Automática
+                    <br><br>
+
+                    <b>Control electrónico:</b> Sistemas de gestión y supervisión del motor y la transmisión
+                    <br><br>
+
+                    <b>Año del modelo:</b> 2023
+                    <br><br>
+
+                    <b>Combustible:</b> Gasolina
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SUSPENSION Y FRENOS -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#suspension">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                        Suspensión y frenos
+                    </a>
+                </h4>
+            </div>
+
+            <div id="suspension" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <b>Suspensión delantera:</b> Eje de montante telescópico de articulación simple con construcción ligera de aluminio y acero
+                    <br><br>
+
+                    <b>Suspensión trasera:</b> Eje de tres brazos con construcción ligera de acero
+                    <br><br>
+
+                    <b>Tipo de suspensión:</b> Suspensión independiente en las cuatro ruedas
+                    <br><br>
+
+                    <b>Freno delantero:</b> Discos con pinza flotante de un pistón
+                    <br><br>
+
+                    <b>Freno trasero:</b> Discos con pinza flotante de un pistón
+                    <br><br>
+
+                    <b>Sistema antibloqueo:</b> ABS
+                    <br><br>
+
+                    <b>Control de estabilidad:</b> Control Dinámico de Estabilidad (DSC)
+                    <br><br>
+
+                    <b>Control de tracción:</b> Control Dinámico de Tracción (DTC)
+                    <br><br>
+
+                    <b>Asistencia de frenado:</b> Dynamic Brake Control (DBC)
+                    <br><br>
+
+                    <b>Control de frenado en curvas:</b> Cornering Brake Control (CBC)
+                    <br><br>
+
+                    <b>Asistencia de conducción:</b> Asistente de arranque en pendientes
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- LLANTAS -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#llantas">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                        Llantas y neumáticos
+                    </a>
+                </h4>
+            </div>
+
+            <div id="llantas" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <b>Neumático delantero:</b> 245/45 R19
+                    <br><br>
+
+                    <b>Neumático trasero:</b> 245/45 R19
+                    <br><br>
+
+                    <b>Tipo de neumáticos:</b> Neumáticos All-Season
+                    <br><br>
+
+                    <b>Rin delantero:</b> 19 pulgadas
+                    <br><br>
+
+                    <b>Rin trasero:</b> 19 pulgadas
+                    <br><br>
+
+                    <b>Medida del rin delantero:</b> 8.0J x 19
+                    <br><br>
+
+                    <b>Medida del rin trasero:</b> 8.0J x 19
+                    <br><br>
+
+                    <b>Material de los rines:</b> Aleación ligera BMW Y-Spoke Bi-Color
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- DESEMPENO -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#desempeno">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                        Desempeño
+                    </a>
+                </h4>
+            </div>
+
+            <div id="desempeno" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <b>Velocidad máxima:</b> 209 km/h
+                    <br><br>
+
+                    <b>Aceleración de 0 a 100 km/h:</b> Aproximadamente 6.2 segundos de 0 a 60 mph
+                    <br><br>
+
+                    <b>Consumo de combustible urbano:</b> 25 mpg (EPA)
+                    <br><br>
+
+                    <b>Consumo de combustible en carretera:</b> 34 mpg (EPA)
+                    <br><br>
+
+                    <b>Consumo de combustible combinado:</b> 28 mpg (EPA)
+                    <br><br>
+
+                    <b>Capacidad del tanque:</b> Aproximadamente 54 litros
+                    <br><br>
+
+                    <b>Relación peso-potencia:</b> Aproximadamente 15.6 lb/Hp
+                    <br><br>
+
+                    <b>Plazas:</b> 5 ocupantes
+                    <br><br>
+
+                    <b>Modos de conducción:</b> COMFORT, ECO PRO y SPORT
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- DIMENSIONES -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#dimensiones">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                        Dimensiones y peso
+                    </a>
+                </h4>
+            </div>
+
+            <div id="dimensiones" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <b>Largo:</b> 4,501 mm
+                    <br><br>
+
+                    <b>Ancho:</b> 1,844 mm
+                    <br><br>
+
+                    <b>Altura:</b> 1,641 mm
+                    <br><br>
+
+                    <b>Distancia entre ejes:</b> 2,692 mm
+                    <br><br>
+
+                    <b>Distancia entre ruedas delanteras:</b> 1,582 mm
+                    <br><br>
+
+                    <b>Distancia entre ruedas traseras:</b> 1,582 mm
+                    <br><br>
+
+                    <b>Altura libre al suelo:</b> 206 mm
+                    <br><br>
+
+                    <b>Peso en orden de marcha:</b> Aproximadamente 1,701 kg
+                    <br><br>
+
+                    <b>Capacidad de cajuela:</b> 727 litros, aproximadamente
+                    <br><br>
+
+                    <b>Capacidad del tanque:</b> Aproximadamente 54 litros
+                    <br><br>
+
+                    <b>Año:</b> 2023
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- EQUIPAMIENTO -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#equipamiento">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                        Equipamiento y tecnología
+                    </a>
+                </h4>
+            </div>
+
+            <div id="equipamiento" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <b>Iluminación:</b> Faros LED
+                    <br><br>
+
+                    <b>Instrumentación:</b> BMW Live Cockpit
+                    <br><br>
+
+                    <b>Sistema multimedia:</b> BMW iDrive 8
+                    <br><br>
+
+                    <b>Conectividad:</b> Bluetooth, Apple CarPlay y Android Auto
+                    <br><br>
+
+                    <b>Sistema de navegación:</b> Navegación BMW
+                    <br><br>
+
+                    <b>Climatización:</b> Aire acondicionado automático de doble zona
+                    <br><br>
+
+                    <b>Asientos:</b> Asientos delanteros con ajuste eléctrico
+                    <br><br>
+
+                    <b>Vestiduras:</b> Sensatec perforado color negro
+                    <br><br>
+
+                    <b>Volante:</b> Volante multifunción de cuero
+                    <br><br>
+
+                    <b>Interior:</b> Molduras Black High Gloss con iluminación ambiental
+                    <br><br>
+
+                    <b>Acceso:</b> Comfort Access con acceso sin llave
+                    <br><br>
+
+                    <b>Instrumentación digital:</b> Pantalla digital BMW
+                    <br><br>
+
+                    <b>Seguridad:</b> Bolsas de aire frontales, laterales y de cabeza
+                    <br><br>
+
+                    <b>Asistencia de estacionamiento:</b> Cámara de visión trasera y sensores de estacionamiento
+                    <br><br>
+
+                    <b>Control de crucero:</b> Control de crucero
+                    <br><br>
+
+                    <b>Asistencia de conducción:</b> Sistemas de asistencia BMW
+                    <br><br>
+
+                    <b>Seguridad activa:</b> ABS, DSC, DTC y asistencia de frenado
+                    <br><br>
+
+                    <b>Techo:</b> Techo panorámico eléctrico
+                    <br><br>
+
+                    <b>Encendido:</b> Botón de arranque y sistema de arranque remoto del motor
+                    <br><br>
+
+                    <b>Equipamiento exterior:</b> Color Storm Bay Metallic y diseño exterior xLine
+                    <br><br>
+
+                    <b>Paquete Convenience:</b> Acceso Comfort Access, techo panorámico, espejos con atenuación automática y carga inalámbrica
+                    <br><br>
+
+                    <b>Rines:</b> Aleación ligera Y-Spoke Bi-Color de 19 pulgadas
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div><!-- /category-products -->
+
+</div>
+
+
+         </div>
+         </div>  
+
+            </div>
+          </div><!--/product-details-->
+
+
+<h5>
+
+
+
+     
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container4" style="font-size: 16px;">
+<p><b>BMW X1 xDrive28i 2023</b> combina elegancia, dinamismo y versatilidad en un SUV premium diseñado para destacar en cada recorrido. Su motor BMW TwinPower Turbo de 2.0 litros, acompañado de la tracción integral inteligente xDrive, ofrece una conducción potente, ágil y segura. Su diseño moderno con acabado xLine, techo panorámico y un interior sofisticado con tecnología BMW de última generación convierten cada viaje en una experiencia de confort, estilo y placer al volante.</p>
+</div>
+
+
+<section id="5189" class="list-article documents">
+  <div class="container5">
+    <hr class="red">
+    <div class="row">
+
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <article class="post">
+          <div class="guard-of">
+            <a href="x5Drive40i.html">
+              <img class="img img-responsive" src="cms/10/1.jpg" alt="CRF125FB Big Wheel">
+            </a>
+            <h4><b>BMW X5 xDrive40i 2026<br>$687,735.00</b></h4>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <article class="post">
+          <div class="guard-of">
+            <a href="f750.html">
+              <img class="img img-responsive" src="cms/25/1.jpg">
+            </a>
+            <h4><b>Bmw F 750 gs 2022<br>$131,400.00</b></h4>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <article class="post">
+          <div class="guard-of">
+            <a href="Drive40i.html">
+              <img class="img img-responsive" src="cms/9/1.jpg">
+            </a>
+            <h4><b>BMW X5 xDrive40i 2026<br>$976,360.50</b></h4>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <article class="post">
+          <div class="guard-of">
+            <a href="f850.html">
+              <img class="img img-responsive" src="cms/26/1.jpg">
+            </a>
+            <h4><b>Bmw F 850 gs 2023<br>$171,600.00</b></h4>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer style="font-size: 16px;">
+  <div>
+    <div class="container">
+      <dh5 {
+  font-size: 1em !important;
+iv class="row" >
+        <div class="col-sm-2">
+          <img src="logo.svg" style="max-width:150px;padding-top: 20%;">
+        </div>
+        <div class="col-sm-3" style="text-align:center;padding-top: 5px;">
+          <b>
+            <br><a href="aviso.html" style="color:white;">Aviso de privacidad</a>
+            <br><a href="terminos.html" style="color:white;">Términos y Condiciones</a>
+            <br><a href="contacto.html" style="color:white;">Contáctanos</a>
+          </b>
+        </div>
+        <div class="col-sm-3" style="text-align:center;margin-top:5px;color:white;">
+          <br>
+          <a href="mailto:ventas@bmw.com.mx.werke.cc" style="color:white;">
+            ventas@bmw.com.mx.werke.cc
+          </a>
+          <br>
+          <b>Whatsapp:</b> 56 4813 6159<br>
+          <b>Teléfono:</b> 55 9317 8433<br><br>
+          <p>
+         Av. Javier Barros Sierra 495-Piso 14, Oficina 1401,<br> Santa Fe, Álvaro Obregón, 01376 <br>Ciudad de México, CDMX
+          </p>
+        </div>
+        <div class="col-sm-4" style="text-align:center;">
+          <img src="mm.png" style="max-width:250px;padding-top:10%;">
+        </div>
+      </div>
+    </div>
+    <div class="payment-bar">
+      <img src="visa.png">
+      <img src="master.png">
+      <img src="spei.png">
+      <img src="oxxo.png">
+    </div>
+    <nav style="background: linear-gradient(135deg, #020812 0%, #0B2038 48%, #1A4B70 100%);color:white;text-align:center;">
+      <b>Todos los derechos reservados<br>2026</b>
+    </nav>
+  </div>
+</footer>
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("overlay");
+
+function toggleMenu(){
+
+    menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+
+}
+
+menuToggle.addEventListener("click", toggleMenu);
+
+overlay.addEventListener("click", toggleMenu);
+
+document.querySelectorAll(".menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+<script src="js/bootstrap.min.js"></script>
+
+
+<style>
+  .redes-flotantes {
+position: fixed;
+right: 8px;
+top: 86%;
+z-index: 20;
+max-width: 80px;
+
+}
+.redes-flotantes img {        max-width: 75%;
+
+float: right; clear: right;
+ margin: 5px;
+-moz-transform: scale(.8) ;
+-webkit-transform: scale(.8) ;
+-o-transform: scale(.8) ;
+-ms-transform: scale(.8) ;
+transform: scale(.8) ;
+-webkit-transition: all .2s ease-in-out;
+-moz-transition: all .2s ease-in-out;
+-o-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}</style>
+<div class='redes-flotantes'>
+<div class="btn-whatsapp">
+<a href="https://wa.me/message/E3RAKZQ3EZKPK1">
+<img src="w.png" alt="">
+</a>
+</div>
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="cms/assets/paginator.js"></script>
+<script src="cms/assets/paginate.js"></script>
+<script src="cms/assets/paginate-content.js"></script>
+<link href="cms/assets/responsiveslides.css" media="screen" rel="stylesheet"/>
+<script src="cms/assets/responsiveslides.js"></script>
+</body>
+</html>
+    
